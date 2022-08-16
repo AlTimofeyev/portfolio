@@ -1,0 +1,24 @@
+.section {
+    padding: 4rem;
+    background: #fff;
+}
+
+h1 {
+    text-align: center;
+}
+
+.details__container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 1120px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.details {
+    position: relative;
+    text-align:justify;
+    /* word-spacing: -2px; */
+    margin: 10px 0 10px;
+}

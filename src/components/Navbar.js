@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import { EButton } from './EButton';
+import { EButton } from './EButton';
 import './Navbar.css'
 
 function Navbar() {
@@ -61,7 +61,7 @@ function Navbar() {
               </a>
             </li>
           </ul>
-          {/* {button && <EButton url='https://github.com/AlTimofeyev/' buttonStyle='btn--outline'>GITHUB</EButton>} */}
+          {button && <EButton url='https://github.com/AlTimofeyev/' buttonStyle='btn--outline'>GITHUB</EButton>}
         </div>
       </nav>
     </>
