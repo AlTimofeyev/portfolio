@@ -1,7 +1,8 @@
 import React from 'react'
 import '../../App.css';
-// import Cards from '../Cards';
 import HeaderSection from '../HeaderSection';
+import Cards from '../Cards';
+import Footer from '../Footer';
 
 
 function Projects () {
@@ -13,7 +14,8 @@ function Projects () {
                 heading='Projects'
                 subheading='Available on GitHub'
             />
-            {/* <Cards /> */}
+            <Cards/>
+            <Footer/>
         </>
     );
 };

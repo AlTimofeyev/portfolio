@@ -9,13 +9,23 @@
 .projects,
 .contact {
     display: flex;
-    /* height: 90vh; */
+    height: 90vh;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
 }
 
+.home {
+    background-image: url('/public/images/ArnoSmit-CherryBlossoms.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 100px;
+}
+
 .projects {
+    background-image: url('/public/images/FirPinecones.JPG');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,8 +34,9 @@
 }
   
 .contact {
+    background-image: url('/public/images/Gemi-TimeToDyeWithYou.jpeg');
     background-position: center;
-    background-size: fill;
+    background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
     font-size: 100px;

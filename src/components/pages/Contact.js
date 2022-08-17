@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../App.css';
 import HeaderSection from '../HeaderSection';
+import Footer from '../Footer';
 
 
 function Contact () {
@@ -12,6 +13,7 @@ function Contact () {
                 heading='Contact'
                 subheading='Details Below'
             />
+            <Footer/>
         </>
     );
 };
