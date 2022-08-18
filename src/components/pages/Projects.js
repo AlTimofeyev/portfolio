@@ -11,7 +11,7 @@ function Projects () {
             <HeaderSection 
                 src='/images/FirPinecones.JPG'
                 alt='Fir Pinecones'
-                heading='Projects'
+                heading='PROJECTS'
                 subheading='Available on GitHub'
             />
             <Cards/>

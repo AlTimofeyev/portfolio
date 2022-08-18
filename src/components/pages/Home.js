@@ -10,8 +10,8 @@ function Home () {
         <>
             <HeaderSection 
                 src='/images/ArnoSmit-CherryBlossoms.jpeg'
-                alt='Cherry Blossoms'
-                heading='Portfolio'
+                alt='Arno Smit Cherry Blossoms'
+                heading='PORTFOLIO'
                 subheading='About Me'
             />
             <HeroSection/>

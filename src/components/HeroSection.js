@@ -1,8 +1,8 @@
 import React from 'react'
 import '../App.css';
-import './HeroSection.css'
+import './HeroSection.css';
 
-function HeroSection(props) {
+function HeroSection() {
   return (
     <div className='section'>
       <div className='section'>

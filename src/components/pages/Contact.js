@@ -10,7 +10,7 @@ function Contact () {
             <HeaderSection 
                 src='/images/Gemi-TimeToDyeWithYou.jpeg'
                 alt='Gemi Time To Dye With You'
-                heading='Contact'
+                heading='CONTACT'
                 subheading='Details Below'
             />
             <Footer/>
