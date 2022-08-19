@@ -23,7 +23,7 @@ function ContactDetails() {
                             PLEASE LET ME KNOW, THROUGH EMAIL, AT LEAST 24 HOURS IN ADVANCE THE TIME AND DATE YOU WILL CALL, AND IF POSSIBLE YOUR PHONE NUMBER TOO!
                         </p>
                         <p className='contact_details'>
-                            I do no not answer calls from unknown/spam callers and this notice will give me enough time to see your email and expect your call. 
+                            I do not answer calls from unknown/spam callers and this notice will give me enough time to see your email and expect your call. 
                         </p>
                         <p className='contact_details'>
                             I am very sorry for any inconvenience this may cause.
