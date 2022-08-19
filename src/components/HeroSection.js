@@ -25,6 +25,11 @@ function HeroSection() {
                 Although that is the end goal for my career in this industry, I fully intend to aquire new skills throughout my work, even if they do not relate to my goal.
                 I am a very self-driven, motivated and resourceful individual with lots of grit when it comes to my work and I enjoy taking new learning opportunitites any chance I get.
               </p>
+              <img 
+                className='workplace__insight_img'
+                src={process.env.PUBLIC_URL + '/images/MyWorkplaceInsights.png'} 
+                alt='Workplace Insights' 
+              />
             </div>
           </div>
         </div>
