@@ -15,19 +15,21 @@ function HeroSection() {
             <h1>ABOUT ME</h1>
             <div className='details__container'>
               <p className='details'>
-              I am a Computer Science graduate focused mainly on software engineering, application development and tool creation using C/C++, Java and Python, though I am not limiting myself to just this. 
-              I have completed numerous technical projects; some where I collaborated in a team environment following Agile(scrum) methodologies and others where I worked individually. 
-              Most of my technical projects are maintained using git version control system and GitHub. 
-              I also have experience with using AWS and GCP as well as SQL for database management, though not in a professional environment. 
+                I am a Computer Science graduate focused mainly on software engineering, application development and tool creation using C/C++, Java and Python, though I am not limiting myself to just this. 
+                I have completed numerous technical projects; some where I collaborated in a team environment following Agile(scrum) methodologies and others where I worked individually. 
+                Most of my technical projects are maintained using git version control system and GitHub. 
+                I am also familiar with cloud technologies such as AWS and GCP, web technologies such as React and database management technologies such as SQL, though not in a professional environment. 
               </p>
               <p className='details'>
-              I am a very self-driven, motivated and resourceful individual with lots of grit when it comes to my work and I enjoy taking new learning opportunitites any chance I get.
+                My goal is to one day work in the field of machine learning, artificial intelligence and augmented reality.
+                Although that is the end goal for my career in this industry, I fully intend to aquire new skills throughout my work, even if they do not relate to my goal.
+                I am a very self-driven, motivated and resourceful individual with lots of grit when it comes to my work and I enjoy taking new learning opportunitites any chance I get.
               </p>
             </div>
           </div>
         </div>
         <div className='introduction__wrapper'>
-        <div className='section'>
+          <div className='section'>
             <h1>SKILLS</h1>
             <h2>TECHNICAL SKILLS</h2>
             <div className='list-container'>

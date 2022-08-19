@@ -15,15 +15,18 @@
 .section h1 {
     color: rgb(81, 86, 141);
     text-align: center;
+    font-size: 2.2rem;
 }
 
 .section h2 {
     text-align: center;
+    font-size: 1.5rem;
 }
 
-.list-wrapper h3 {
+.section h3 {
     color: rgb(111, 112, 126);
     text-align: center;
+    font-size: 1.4rem;
 }
 
 .details__container {
@@ -38,6 +41,8 @@
 .details {
     position: relative;
     text-align: justify;
+    text-indent: 30px;
+    font-size: 1.1rem;
     /* margin: 0px 0 10px; */
 }
 
@@ -59,9 +64,9 @@
     position: relative;
 }
 
-/* .list {
-    justify-content: center;
-} */
+.list {
+    font-size: 1.1rem;
+}
 
 .list-item {
     margin: 0 1rem;

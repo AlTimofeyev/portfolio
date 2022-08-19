@@ -1,0 +1,30 @@
+.contact__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact__wrapper {
+    width: 50%;
+}
+
+.contact_details {
+    position: relative;
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 900px) {
+    .contact__container {
+        flex-direction: column;
+    }
+    
+    .contact__wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact_details {
+        word-spacing: -1px;
+    }
+}

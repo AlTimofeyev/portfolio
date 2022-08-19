@@ -5,7 +5,7 @@ import './Cards.css';
 function Cards() {
   return (
     <div className='cards'>
-        <h1>MOST RECENT PROJECTS</h1>
+        <h1 className='cards__title'>MOST RECENT PROJECTS</h1>
         <div className='cards__container'>
             <div className='cards__wrapper'>
                 <ul className='cards__items'>
@@ -42,7 +42,7 @@ function Cards() {
                 </ul>
             </div>
         </div>
-        <h1>OTHER PROJECTS</h1>
+        <h1 className='cards__title'>OTHER PROJECTS</h1>
         <div className='cards__container'>
             <div className='cards__wrapper'>
                 <ul className='cards__items'>
