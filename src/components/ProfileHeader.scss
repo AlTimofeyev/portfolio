@@ -1,0 +1,319 @@
+@import "../Constants.scss";
+
+.profile {
+    background-color: $lightBackground_LightTheme;
+    color: $darkText_LightTheme;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    // height: fit-content;
+    height: 1px; // So that child elements inherit the height, fit-content doesn't do that.
+    min-height: 90vh; // Fallback if the following min-height isn't available.
+    min-height: 90svh; // Overwrite the previous min-height for small viewports like mobile, if it's availalble.
+
+    .profile-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around; // If parent height is fit-content, set this to center.
+        flex-direction: column;
+        // gap: 200px;  // If parent height is fit-content, set the gap here.
+        width: 90%;
+        height: 100%;
+
+        .portfolio-introducation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 60px;
+            width: 100%;
+
+            .profile-name {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+
+                .profile-name-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .name {
+                        font-family: 'Island Moments', 'Inter', sans-serif;
+                        font-size: $pageTitle1;
+                        letter-spacing: 1rem;
+                        word-spacing: 4rem;
+                    }
+                }
+            }
+
+            .profile-title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                position: relative;
+
+                .profile-title-container {
+                    display: grid;
+                    place-content: center;
+                    position: absolute;
+
+                    .title {
+                        text-transform: uppercase;
+                        font-family: 'Inter';
+                        font-weight: 700;
+                        font-size: $pageTitle5;
+                        line-height: 5.5rem;
+                        word-spacing: 2rem;
+                        cursor: default;
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); // https://bennettfeely.com/clippy/
+                    }
+                }
+            }
+        }
+
+        .profile-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            width: 100%;
+            padding: 1rem 2rem;
+
+            .profile-button-container {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:first-child {
+                    justify-content: flex-end;
+                }
+
+                &:last-child {
+                    justify-content: flex-start;
+                }
+
+                .profile-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1.5rem 2rem;
+                    border-radius: 15px;
+                    text-decoration: none;
+                    color: inherit;
+                    font-size: $heading6;
+                    font-weight: 400;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .primary-btn,
+                .highlighted-btn {
+                    border: 1px solid $accent1_LightTheme;
+
+                    &:hover {
+                        background-color: $accent2_LightTheme;
+                        color: $accent1_LightTheme;
+                        border: 1px solid $accent2_LightTheme;
+                        box-shadow: 0px 0px 10px $accent2_LightTheme;
+                        transform: scale(1.05);
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
+                    }
+                }
+
+                .primary-btn {
+                    background-color: $accent1_LightTheme;
+                }
+
+                .highlighted-btn {
+                    background-color: $secondary_LightTheme;
+                    background-color: transparentize($primary_LightTheme, 0.5);
+                }
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .portfolio-introducation {
+                gap: 50px;
+
+                .profile-name {
+                    .profile-name-container {
+                        .name {
+                            font-size: $pageTitle2;
+                            word-spacing: 3rem;
+                        }
+                    }
+                }
+
+                .profile-title {
+                    .profile-title-container {
+                        .title {
+                            font-size: $pageTitle6;
+                            line-height: 4.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 950px) {
+        .profile-container {
+            justify-content: center;
+            gap: 200px;
+
+            .portfolio-introducation {
+                .profile-name {
+                    .profile-name-container {
+                        .name {
+                            font-size: $pageTitle3;
+                            word-spacing: 2rem;
+                        }
+                    }
+                }
+
+                .profile-title {
+                    .profile-title-container {
+                        .title {
+                            font-size: $heading2;
+                            line-height: 3.5rem;
+                        }
+                    }
+                }
+            }
+
+            .profile-buttons {
+                gap: 2rem;
+
+                .profile-button-container {
+                    &:first-child {
+                        justify-content: center;
+                    }
+
+                    &:last-child {
+                        justify-content: center;
+                    }
+
+                    .profile-button {
+                        font-size: $defaultFontSize;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 650px) {
+        .profile-container {
+            .portfolio-introducation {
+                gap: 50px;
+
+                .profile-name {
+                    .profile-name-container {
+                        .name {
+                            font-size: $pageTitle5;
+                            letter-spacing: 0.5rem;
+                            word-spacing: 1rem;
+                        }
+                    }
+                }
+
+                .profile-title {
+                    .profile-title-container {
+                        .title {
+                            font-size: $heading4;
+                            line-height: 2.8rem;
+                            word-spacing: 1.5rem;
+                        }
+                    }
+                }
+            }
+
+            .profile-buttons {
+                .profile-button-container {
+                    .profile-button {
+                        font-size: $heading7;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 460px) {
+        .profile-container {
+            .portfolio-introducation {
+                .profile-name {
+                    .profile-name-container {
+                        .name {
+                            font-size: $pageTitle6;
+                        }
+                    }
+                }
+
+                .profile-title {
+                    .profile-title-container {
+                        .title {
+                            font-size: $heading4;
+                            line-height: 2.4rem;
+                            word-spacing: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .profile-buttons {
+                .profile-button-container {
+                    .profile-button {
+                        font-size: $heading7;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 395px) {
+        .profile-container {
+            gap: 100px;
+
+            .portfolio-introducation {
+                gap: 20px;
+
+                .profile-name {
+                    .profile-name-container {
+                        .name {
+                            font-size: $heading3;
+                            letter-spacing: 0.5rem;
+                            word-spacing: 1rem;
+                        }
+                    }
+                }
+
+                .profile-title {
+                    .profile-title-container {
+                        .title {
+                            font-size: $heading7;
+                            line-height: 1.5rem;
+                            word-spacing: 0.5rem;
+                        }
+                    }
+                }
+            }
+
+            .profile-buttons {
+                .profile-button-container {
+                    .profile-button {
+                        width: 100%;
+                        padding: 0.5rem 0rem;
+                        font-size: $heading9;
+                    }
+                }
+            }
+        }
+    }
+}

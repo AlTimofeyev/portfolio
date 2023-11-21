@@ -1,0 +1,95 @@
+// Global constants for the website.
+
+// ************************************
+// ******** WEBSITE FONT SIZES ********
+// ************************************
+// Default font size
+$defaultFontSize: 1.8rem;
+
+// Heading font sizes
+$heading1: 4.5rem;
+$heading2: 4.0rem;
+$heading3: 3.5rem;
+$heading4: 3.0rem;
+$heading5: 2.5rem;
+$heading6: 2.0rem;
+$heading7: 1.5rem;
+$heading8: 1.2rem;
+$heading9: 1.0rem;
+$heading10: 0.5rem;
+
+// Page Title font sizes
+$pageTitle1: 18rem;
+$pageTitle2: 14rem;
+$pageTitle3: 10rem;
+$pageTitle4: 8rem;
+$pageTitle5: 6.5rem;
+$pageTitle6: 5rem;
+
+
+// ************************************
+// ********** WEBSITE COLORS **********
+// ************************************
+// Gold palette
+$superLightGold: #fff9e6;
+$veryVeryLightGold: #fff4cc;
+$veryLightGold: #fff0b3;
+$lightGold: #fde06c;
+$gold: #f2bf18;
+$darkGold: #a68729;
+$veryDarkGold: #665933;
+$veryVeryDarkGold: #403926;
+
+// Neutral gold palette
+$neutralLightGold: #fffbf0;
+$neutralNormalGold: #807d75;
+$neutralDarkGold: #333129;
+
+// Purple palette
+$superLightRoyalPurple : #f1e6ff;
+$veryVeryLightRoyalPurple : #d8c2f2;
+$veryLightRoyalPurple : #b995e6;
+$lightRoyalPurple: #9069bf;
+$royalPurple: #7851a9;
+$deepRoyalPurple: #4b006e;
+$darkDeepRoyalPurple: #4e1a66;
+$veryDarkDeepRoyalPurple: #482459;
+$veryVeryDarkDeepRoyalPurple: #351d40;
+
+$neutralLightDeepRoyalPurple: #faf0ff;
+$neutralNormalDeepRoyalPurple: #7c7580;
+$neutralDarkDeepRoyalPurple: #302933;
+
+
+// ********** LIGHT THEME (Gold) **********
+// Text colors for Light theme
+$lightText_LightTheme: $superLightGold;
+$darkText_LightTheme: $veryVeryDarkDeepRoyalPurple;
+
+// Background colors for Light theme
+$lightBackground_LightTheme: $neutralLightGold;
+$darkBackground_LightTheme: $neutralDarkDeepRoyalPurple;
+
+// (primary, secondary, accent) 60, 30, 10 rule
+$primary_LightTheme: $lightGold;
+$secondary_LightTheme: $veryLightGold;
+$accent1_LightTheme: $gold;
+$accent2_LightTheme: $deepRoyalPurple;
+
+
+
+
+// ********** DARK THEME (Purple) **********
+// Text colors for Dark them
+$lightText_DarkTheme: $superLightRoyalPurple;
+$darkText_DarkTheme: $veryVeryDarkGold;
+
+// Background colors for Light theme
+$lightBackground_DarkTheme: $neutralLightDeepRoyalPurple;
+$darkBackground_DarkTheme: $neutralDarkGold;
+
+// (primary, secondary, accent) 60, 30, 10 rule
+$primary_DarkTheme: $royalPurple;
+$secondary_DarkTheme: $veryDarkDeepRoyalPurple;
+$accent1_DarkTheme: $deepRoyalPurple;
+$accent2_DarkTheme: $gold;

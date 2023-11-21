@@ -1,0 +1,12 @@
+@import "../Constants.scss";
+
+.contact {
+    display: flex;
+    align-items: center; // For Header
+    justify-content: center;
+    flex-direction: column; // For Header
+    gap: 400px;
+    height: fit-content;
+    min-height: 100vh; // Fallback if the following min-height isn't available.
+    min-height: 100svh; // Overwrite the previous min-height for small viewports like mobile, if it's availalble.
+}

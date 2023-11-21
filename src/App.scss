@@ -1,0 +1,26 @@
+@import "Constants.scss";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 16px;
+    font-size: 62.5%;
+}
+
+.app {
+    background-color: $lightBackground_LightTheme;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: $defaultFontSize;
+
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+}

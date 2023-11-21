@@ -1,0 +1,318 @@
+@import "../Constants.scss";
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: 5px 5px;
+
+    .navbar-container {
+        background-color: $darkBackground_LightTheme;
+        color: $lightText_LightTheme;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 80px;
+        overflow: hidden;
+        border-radius: 15px;
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+
+            .navbar-logo-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                padding: 0 1rem;
+                border-radius: 15px;
+                text-decoration: none;
+                color: inherit;
+
+                .navbar-logo-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    padding: 0 1rem;
+                    border-radius: 50%;
+
+                    .portfolio-logo {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+
+                .navbar-logo-name-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    padding: 0 1rem;
+
+                    .navbar-name {
+                        font-size: $heading6;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .menu-icon {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 15%;
+            height: 100%;
+
+            .menu-icon-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 3em;
+                height: 3em;
+                border-radius: 50%;
+
+                .fa-bars {
+                    font-size: $heading5;
+                }
+
+                .fa-times {
+                    font-size: $heading4;
+                }
+            }
+        }
+
+        .navbar-menu {
+            background-color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 0px 1rem;
+            border-radius: 15px;
+
+            .navbar-menu-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                height: 100%;
+
+                .navbar-menu-links {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+
+                    .navbar-link {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 10rem;
+                        height: 100%;
+                        border-top: 1rem solid transparent;
+                        border-bottom: 1rem solid transparent;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: inherit;
+                        font-size: $heading7;
+                        font-weight: 500;
+                        transition: 0.25s ease-in-out;
+
+                        &:hover {
+                            border-bottom: 1rem solid $accent1_LightTheme;
+                            color: $accent1_LightTheme;
+                        }
+                    }
+
+                    .active-link {
+                        border-bottom: 1rem solid $accent1_LightTheme;
+                        color: $accent1_LightTheme;
+                    }
+                }
+
+                .navbar-menu-buttons {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    height: 70%;
+
+                    .navbar-button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 12rem;
+                        height: 100%;
+                        overflow: hidden;
+                        border: 1px solid $lightText_LightTheme;
+                        border-radius: 15px;
+                        text-transform: uppercase;
+                        font-size: $heading7;
+                        font-weight: 500;
+                        cursor: pointer;
+                        transition: all 0.4s ease-in-out;
+
+                        .navbar-github,
+                        .navbar-linkedin {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: inherit;
+                            height: inherit;
+                            text-decoration: none;
+                            color: inherit;
+                            transition: all 0.4s ease-in-out;
+                        }
+
+                        &:hover {
+                            background-color: $lightText_LightTheme;
+
+                            .navbar-github,
+                            .navbar-linkedin {
+                                color: $darkBackground_LightTheme;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .navbar-logo {
+                .navbar-logo-link {
+                    .navbar-logo-name-container {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 950px) {
+        .navbar-container {
+            transition: all 0.8s ease-in-out;
+            
+            .menu-icon {
+                display: flex;
+            }
+
+            .navbar-menu {
+                position: fixed;
+                top: 85px;
+                right: -100%;
+                width: 50%;
+                height: 400px;
+                padding: 1rem;
+                border-radius: 0px 0px 15px 15px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.8s ease-in-out;
+
+                .navbar-menu-container {
+                    flex-direction: column;
+                    width: 100%;
+
+                    .navbar-menu-links {
+                        flex-direction: column;
+                        width: 100%;
+
+                        .navbar-link {
+                            width: 100%;
+                            font-size: $heading6;
+                            font-weight: 600;
+                        }
+                    }
+
+                    .navbar-menu-buttons {
+                        flex-direction: column;
+                        width: 100%;
+
+                        .navbar-button {
+                            width: 100%;
+                            font-size: $heading6;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            .active-menu {
+                right: 5px;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .active-navbar {
+            border-radius: 15px 15px 0px 15px;
+            transition: all 0.8s ease-in-out;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        padding: 0px;
+
+        .navbar-container {
+            border-radius: 0px 0px 15px 15px;
+            transition: all 0.8s ease-in-out;
+
+            .navbar-menu {
+                top: 80px;
+                width: 100%;
+                height: calc(100% - 80px);
+                padding: 1rem;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.8s ease-in-out;
+
+                .navbar-menu-container {
+                    flex-direction: column;
+                    width: 100%;
+
+                    .navbar-menu-links {
+                        flex-direction: column;
+                        width: 100%;
+
+                        .navbar-link {
+                            width: 100%;
+                            font-size: $heading6;
+                            font-weight: 600;
+                        }
+                    }
+
+                    .navbar-menu-buttons {
+                        flex-direction: column;
+                        width: 100%;
+
+                        .navbar-button {
+                            width: 100%;
+                            font-size: $heading6;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            .active-menu {
+                right: 0%;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .active-navbar {
+            border-radius: 0px;
+        }
+    }
+}

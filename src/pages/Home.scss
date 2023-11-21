@@ -1,0 +1,1075 @@
+@import "../Constants.scss";
+
+.home {
+    display: flex;
+    align-items: center; // For Header
+    justify-content: center;
+    flex-direction: column; // For Header
+    gap: 400px;
+    height: fit-content;
+    min-height: 100vh; // Fallback if the following min-height isn't available.
+    min-height: 100svh; // Overwrite the previous min-height for small viewports like mobile, if it's availalble.
+
+    .home-container {
+        color: $darkText_LightTheme;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        gap: 100px;
+
+        .home-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+
+            .section-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 140rem;
+
+                .section-title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 1rem;
+                    width: 100%;
+                    padding: 1rem;
+
+                    .section-icon-container {
+                        width: $heading5;
+                        height: $heading5;
+
+                        .section-icon {
+                            fill: $darkText_LightTheme;
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .section-title-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .title {
+                            text-transform: uppercase;
+                            font-weight: 700;
+                            font-size: $heading6;
+                        }
+                    }
+                }
+
+                .section-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 20px;
+                    width: 100%;
+                    padding: 5px;
+
+                    .section-group {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 20px;
+                        width: 100%;
+                        height: 100%;
+
+                        .introduction {
+                            background-color: $primary_LightTheme;
+                            flex: 3;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            overflow: hidden;
+                            width: 100%;
+                            height: 35rem;
+                            padding: 1rem;
+                            border-radius: 15px;
+
+                            .introduction-container {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 20px;
+                                width: 100%;
+                                height: 100%;
+
+                                .profile-picture {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-end;
+                                    height: 100%;
+
+                                    .profile-picture-container {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 25rem;
+                                        height: 25rem;
+                                        box-shadow: 0px 2px 0px 0px $darkText_LightTheme;
+                                        border-radius: 50%;
+
+                                        .pfp {
+                                            width: 92%;
+                                            height: 92%;
+                                            border-radius: 50%;
+                                            object-fit: cover;
+                                            object-position: 0px -15px;
+                                        }
+
+                                        &:hover>.pfp {
+                                            transform: scale(1.08);
+                                            transition: 1s ease;
+                                        }
+                                    }
+                                }
+
+                                .about-me {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    width: fit-content;
+                                    height: 100%;
+
+                                    .about-me-container {
+                                        display: flex;
+                                        align-items: flex-start;
+                                        justify-content: center;
+                                        flex-direction: column;
+                                        gap: 1rem;
+                                        width: 60rem;
+                                        height: 100%;
+
+                                        .about-me-snippet {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: flex-start;
+                                            gap: 1rem;
+
+                                            .waving-icon-container {
+                                                width: $heading2;
+                                                height: $heading2;
+
+                                                .waving-icon {
+                                                    fill: $darkText_LightTheme;
+                                                    width: 100%;
+                                                    height: auto;
+                                                }
+                                            }
+
+                                            .snippet-text {
+                                                font-size: $defaultFontSize;
+                                                font-weight: 300;
+                                            }
+                                        }
+
+                                        .about-me-socials {
+                                            display: none;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: 100%;
+
+                                            .about-me-icons {
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                gap: 1.5rem;
+
+                                                .about-me-icon-container {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    overflow: hidden;
+                                                    width: $heading1;
+                                                    height: $heading1;
+                                                    padding: 0.5rem;
+                                                    border-radius: 50%;
+                                                    box-shadow: 0 0 2px $accent2_LightTheme;
+                                                    transition: 0.3s ease;
+                                                    cursor: pointer;
+
+                                                    .about-me-icon-link {
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        transition: 0.3s ease;
+
+                                                        .about-me-icon {
+                                                            fill: $darkText_LightTheme;
+                                                            width: 100%;
+                                                            height: auto;
+                                                            transition: 0.3s ease;
+                                                        }
+                                                    }
+
+                                                    &:hover {
+                                                        background-color: $accent1_LightTheme;
+                                                        box-shadow: 0 0 10px $accent2_LightTheme;
+
+                                                        .about-me-icon-link {
+                                                            transform: scale(1.3);
+
+                                                            .about-me-icon {
+                                                                fill: $accent2_LightTheme;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .interests {
+                            flex: 1.15;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            flex-direction: column;
+                            gap: 1rem;
+                            height: 35rem;
+
+                            .interest-group {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 1rem;
+                                width: 100%;
+                                height: 100%;
+
+                                .interest-container {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    position: relative;
+                                    overflow: hidden;
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 30px;
+                                    border: 1px solid $accent1_LightTheme;
+                                    cursor: default;
+
+                                    .interest-icon {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 100%;
+                                        height: 100%;
+
+                                        .interest-icon-container {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: $pageTitle2;
+                                            height: $pageTitle2;
+
+                                            .icon {
+                                                fill: $darkText_LightTheme;
+                                                width: 100%;
+                                                height: auto;
+                                            }
+                                        }
+                                    }
+
+                                    .interest-short {
+                                        display: none
+                                    }
+
+                                    .interest-long {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: flex-start;
+                                        flex-direction: column;
+                                        // gap: 1rem;
+                                        position: absolute;
+                                        height: 100%;
+                                        width: 100%;
+                                        padding: 1rem;
+                                        background-color: $darkBackground_LightTheme;
+                                        color: $lightText_LightTheme;
+                                        clip-path: circle(0rem at 50% 50%);
+                                        -webkit-clip-path: circle(0rem at 50% 50%);
+                                        transition: 0.4s ease-in-out;
+
+                                        .interest-title {
+                                            text-transform: uppercase;
+                                            color: $accent1_LightTheme;
+                                            font-size: $heading4;
+                                            font-weight: 700;
+                                            opacity: 0;
+                                            transition: 0.5s ease-in-out;
+                                        }
+
+                                        .interest-list {
+                                            display: flex;
+                                            flex-direction: column;
+                                            align-items: center;
+                                            justify-content: center;
+                                            height: 100%;
+                                            font-size: $heading7;
+                                            font-weight: 600;
+                                            opacity: 0;
+                                            transition: 0.5s ease-in-out;
+                                        }
+                                    }
+
+                                    &:hover>.interest-long {
+                                        clip-path: circle(65%);
+                                        -webkit-clip-path: circle(65%);
+
+                                        .interest-title {
+                                            opacity: 1;
+                                        }
+
+                                        .interest-list {
+                                            opacity: 1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .fact-cards {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 20px;
+                            width: 100%;
+
+                            .fact-card-group {
+                                flex-grow: 1;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 20px;
+
+                                .fact-card {
+                                    background-color: $secondary_LightTheme;
+                                    flex-grow: 1;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    position: relative;
+                                    overflow: hidden;
+                                    width: 33.25rem;
+                                    height: 20rem;
+                                    border-radius: 15px;
+
+                                    .visible-fact,
+                                    .reveal-fact {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 100%;
+                                        height: 100%;
+
+                                        .fact-container {
+                                            align-items: center;
+                                            text-align: center;
+                                            padding: 10px;
+
+                                            .fact {
+                                                font-size: $heading6;
+                                                font-weight: 400;
+
+                                                .fact-list {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    flex-direction: column;
+                                                    gap: 1rem;
+                                                    margin-top: 2.5rem;
+                                                    margin-left: 1.5rem;
+                                                    margin-right: 1.5rem;
+
+                                                    .listed-fact {
+                                                        width: 100%;
+                                                        padding: 0px 10px;
+                                                        border-radius: 20px;
+                                                        font-weight: 500;
+                                                        line-height: 2.5rem;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .visible-fact {
+                                        position: absolute;
+                                    }
+
+                                    .reveal-fact {
+                                        position: relative;
+                                        background-color: $accent2_LightTheme;
+                                        color: $lightText_LightTheme;
+                                        clip-path: circle(1.65rem at calc(100% - 1.20em) 1.15em);
+                                        -webkit-clip-path: circle(1.65rem at calc(100% - 1.20em) 1.15em);
+                                        transition: 0.4s ease-in-out;
+
+                                        .fact {
+                                            opacity: 0;
+                                            transition: opacity 0.5s ease-in-out;
+                                        }
+
+                                        .reveal-fact-icon {
+                                            position: absolute;
+                                            top: 0.40em;
+                                            right: 0.925em;
+                                            color: $accent1_LightTheme;
+                                            font-size: $heading6;
+                                            font-weight: 700;
+                                            pointer-events: none;
+                                            transition: opacity 0.5s;
+                                        }
+
+                                        &:hover {
+                                            background-color: $darkBackground_LightTheme;
+                                            cursor: pointer;
+                                            clip-path: circle(100%);
+
+                                            .fact {
+                                                opacity: 1;
+                                            }
+
+                                            .reveal-fact-icon {
+                                                opacity: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .subsection {
+                            background-color: $secondary_LightTheme;
+                            flex: 1;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            overflow: hidden;
+                            padding: 2rem;
+                            border-radius: 2rem;
+
+                            .subsection-container {
+                                flex: 1;
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                flex-direction: column;
+                                gap: 2rem;
+
+                                .subsection-title {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 100%;
+
+                                    .title {
+                                        text-align: center;
+                                        font-size: $heading4;
+                                        font-weight: 600;
+                                    }
+                                }
+
+                                .skill-list {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: 10px;
+                                    width: 100%;
+                                    height: 100%;
+
+                                    .skill {
+                                        padding: 0.5rem 2rem;
+                                        border: 1px solid $accent2_LightTheme;
+                                        border-radius: 30px;
+                                        font-size: $heading7;
+                                        font-weight: 500;
+                                        transition: 0.2s ease-in-out;
+                                    }
+
+                                    .active {
+                                        border: 1px solid $accent1_LightTheme;
+                                        background-color: $accent1_LightTheme;
+                                    }
+                                }
+                            }
+                        }
+
+                        .skill-proficiency-menu {
+                            display: flex;
+                        }
+
+                        .skill-proficiency-menu-reveal {
+                            display: none;
+                        }
+
+                        .skill-proficiency-menu {
+                            // display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            overflow: hidden;
+                            width: 35rem;
+                            height: 40rem;
+                            padding: 1rem;
+
+                            .skill-proficiency-menu-container {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-direction: column;
+                                width: 100%;
+                                height: 100%;
+                                gap: 1rem;
+
+                                .menu-title {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 100%;
+
+                                    .title {
+                                        font-size: $heading4;
+                                        font-weight: 600;
+                                    }
+                                }
+
+                                .proficiency-menu {
+                                    display: flex;
+                                    align-items: flex-start;
+                                    justify-content: center;
+                                    flex-direction: column;
+                                    position: relative;
+                                    overflow: hidden;
+                                    width: 100%;
+                                    height: 100%;
+                                    border: 1px solid $accent1_LightTheme;
+                                    border-radius: 20px;
+
+                                    .menu-item-group {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: flex-start;
+                                        gap: 1rem;
+                                        position: relative;
+                                        z-index: 1;
+                                        width: 100%;
+                                        height: 15%;
+                                        cursor: pointer;
+
+                                        .proficiency-icon-container {
+                                            flex: none;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: 15%;
+                                            height: 100%;
+
+                                            .proficiency-icon {
+                                                fill: $darkText_LightTheme;
+                                                width: 100%;
+                                                height: 100%;
+                                            }
+                                        }
+
+                                        .proficiency-level {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: flex-start;
+                                            width: 100%;
+                                            height: 100%;
+
+                                            .level {
+                                                padding: 0.25rem 1rem;
+                                                font-size: $heading6;
+                                                font-weight: 600;
+                                                transition: 0.3s all;
+                                            }
+                                        }
+
+                                        &::after {
+                                            content: '';
+                                            background-color: $accent1_LightTheme;
+                                            position: absolute;
+                                            left: 0;
+                                            z-index: -1;
+                                            width: 80%;
+                                            height: 60%;
+                                            border-radius: 0 2.5rem 2.5rem 0;
+                                            transform: translateX(-100%);
+                                            transition: 0.25s all ease-in-out;
+                                        }
+
+                                        &:hover {
+                                            &::after {
+                                                transform: translateX(0%);
+                                            }
+                                        }
+                                    }
+
+                                    .active {
+                                        &:hover {
+                                            .level {
+                                                color: $secondary_LightTheme;
+                                            }
+                                        }
+
+                                        &::after {
+                                            transform: translateX(0%);
+                                        }
+                                    }
+
+                                    &::after {
+                                        content: "";
+                                        background-color: $accent1_LightTheme;
+                                        position: absolute;
+                                        left: 0;
+                                        width: 15%;
+                                        height: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .page-redirect {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 90%;
+                height: 100vh;
+                height: 100svh;
+
+                .page-redirect-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+
+                    .page-redirect-link {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        flex-wrap: wrap;
+                        width: 90%;
+                        height: 50%;
+                        text-decoration: none;
+                        color: inherit;
+
+                        .redirect-title {
+                            text-transform: uppercase;
+                            font-weight: 700;
+                            font-size: $pageTitle2;
+                        }
+
+                        .redirect-icon {
+                            font-size: $pageTitle1;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1525px) {
+    .home {
+        .home-container {
+            .home-section {
+                .section-container {
+                    width: 110rem;
+
+                    .section-content {
+                        .section-group {
+                            &:nth-child(1) {
+                                flex-direction: column;
+                            }
+
+                            .introduction {
+                                flex: initial;
+                            }
+
+                            .interests {
+                                flex: initial;
+                                flex-direction: row;
+                                width: 100%;
+                                height: 18rem;
+                            }
+
+                            .fact-cards {
+                                flex-direction: column;
+
+                                .fact-card-group {
+                                    flex-grow: initial;
+                                    width: 100%;
+
+                                    .fact-card {
+                                        height: 15rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1185px) {
+    .home {
+        .home-container {
+            .home-section {
+                .section-container {
+                    width: 80rem;
+
+                    .section-content {
+                        .section-group {
+                            flex-direction: column;
+
+                            .introduction {
+                                .introduction-container {
+                                    .profile-picture {
+                                        .profile-picture-container {
+                                            width: 20rem;
+                                            height: 20rem;
+                                        }
+                                    }
+
+                                    .about-me {
+                                        .about-me-container {
+                                            width: 55rem;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .fact-cards {
+                                .fact-card-group {
+                                    .fact-card {
+                                        height: 18rem;
+
+                                        .visible-fact,
+                                        .reveal-fact {
+                                            .fact-container {
+                                                .fact {
+                                                    font-size: $defaultFontSize;
+
+                                                    .fact-list {
+                                                        gap: 0.5rem;
+                                                        margin-top: 1.5rem;
+                                                        margin-left: 0.0rem;
+                                                        margin-right: 0.0rem;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .subsection {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .page-redirect {
+                    .page-redirect-container {
+                        .page-redirect-link {
+                            width: 100%;
+
+                            .redirect-title {
+                                font-size: $pageTitle3;
+                            }
+
+                            .redirect-icon {
+                                font-size: $pageTitle2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 925px) {
+    .home {
+        .home-container {
+            .home-section {
+                .section-container {
+                    width: 100%;
+
+                    .section-content {
+                        .section-group {
+
+                            .introduction {
+                                height: 100%;
+                                padding: 2rem 1rem;
+
+                                .introduction-container {
+                                    flex-direction: column;
+
+                                    .about-me {
+                                        justify-content: center;
+
+                                        .about-me-container {
+                                            width: 95%;
+
+                                            .about-me-socials {
+                                                display: flex;
+                                                margin-top: 1.5rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 845px) {
+    .home {
+        .home-container {
+            .home-section {
+                .section-container {
+                    .section-content {
+                        .section-group {
+                            .interests {
+                                flex-direction: column;
+                                height: fit-content;
+
+                                .interest-group {
+                                    .interest-container {
+                                        gap: 2rem;
+                                        height: 5rem;
+                                        padding: 0px 1.5rem;
+
+                                        .interest-icon {
+                                            flex: 1;
+                                            justify-content: flex-start;
+
+                                            .interest-icon-container {
+                                                width: $pageTitle6;
+                                                height: $pageTitle6;
+                                            }
+                                        }
+
+                                        .interest-long {
+                                            display: none;
+                                        }
+
+                                        .interest-short {
+                                            flex: 2;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: flex-end;
+                                            height: 100%;
+
+                                            .interest {
+                                                text-align: center;
+                                                font-size: $heading7;
+                                                font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .page-redirect {
+                    .page-redirect-container {
+                        .page-redirect-link {
+                            justify-content: center;
+                            flex-direction: column;
+                            flex-wrap: nowrap;
+                            gap: 1rem;
+                            width: 100%;
+
+                            .redirect-title {
+                                font-size: $pageTitle3;
+                            }
+
+                            .redirect-icon {
+                                font-size: $pageTitle2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 745px) {
+    .home {
+        .home-container {
+            .home-section {
+                .section-container {
+                    .section-content {
+                        .section-group {
+                            .fact-cards {
+                                .fact-card-group {
+                                    flex-direction: column;
+
+                                    .fact-card {
+                                        width: 100%;
+                                        height: 15rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .page-redirect {
+                    .page-redirect-container {
+                        .page-redirect-link {
+                            .redirect-title {
+                                font-size: $pageTitle5;
+                            }
+
+                            .redirect-icon {
+                                font-size: $pageTitle4;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .home {
+        .home-container {
+            .home-section {
+                .section-container {
+                    .section-content {
+                        .section-group {
+                            .interests {
+                                .interest-group {
+                                    flex-direction: column;
+
+                                    .interest-container {
+                                        gap: 1rem;
+                                        height: 4.5rem;
+
+                                        .interest-icon {
+                                            .interest-icon-container {
+                                                width: $heading1;
+                                                height: $heading1;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .fact-cards {
+                                .fact-card-group {
+                                    .fact-card {
+                                        height: 20rem;
+                                    }
+                                }
+                            }
+
+                            .subsection {
+                                .subsection-container {
+                                    .subsection-title {
+                                        .title {
+                                            font-size: $heading5;
+                                        }
+                                    }
+
+                                    .skill-list {
+                                        .skill {
+                                            font-size: $heading8;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .skill-proficiency-menu {
+                                display: none;
+                            }
+
+                            .skill-proficiency-menu-reveal {
+                                display: flex;
+                                width: 25rem;
+                                height: 35rem;
+
+                                .skill-proficiency-menu-container {
+                                    .menu-title {
+                                        .title {
+                                            font-size: $heading5;
+                                        }
+                                    }
+
+                                    .proficiency-menu {
+                                        .menu-item-group {
+                                            gap: 0.5rem;
+
+                                            .proficiency-icon-container {
+                                                width: 20%;
+                                            }
+
+                                            .proficiency-level {
+                                                .level {
+                                                    font-size: $heading7;
+                                                }
+                                            }
+
+                                            &::after {
+                                                width: 90%;
+                                            }
+                                        }
+
+                                        &::after {
+                                            width: 20%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .page-redirect {
+                    .page-redirect-container {
+                        .page-redirect-link {
+                            .redirect-title {
+                                font-size: $heading2;
+                            }
+
+                            .redirect-icon {
+                                font-size: $heading2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
