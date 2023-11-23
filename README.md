@@ -1,4 +1,7 @@
 # Notes To Self
+## Deploying create-react-app application using GitHub Pages Resource
+- https://create-react-app.dev/docs/deployment/#github-pages
+
 ## If Deleting Everything To Start From Scratch
 - Delete all files in `main` branch, preferably using the GitHub website.
 - Save/Copy/Remove all local files and directories pertaining to this repository.

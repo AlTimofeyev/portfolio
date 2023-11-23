@@ -3,39 +3,23 @@ import { Link } from 'react-router-dom';
 import { NavbarPageSelectionContext } from '../contexts/NavbarContext';
 import './Navbar.scss';
 
+
 function Navbar() {
     const [mobileMenuOpen, setMobileMenu] = useState(false);
     const { pageSelected, setPageSelectionState } = useContext(NavbarPageSelectionContext);
 
-    // const [pageSelected, setPageSelection] = useState(() => {
-    //     // Get stored "page selected" values from local storage.
-    //     const savedPageSelection = localStorage.getItem("pageSelected");
-    //     const initialValue = JSON.parse(savedPageSelection);
-
-    //     return initialValue || [true, false, false, false];
-    // });
-
-    // const setPageSelectionState = (index) => {
-    //     setPageSelection(prevState => prevState.map((pageSelectionState, idx) => idx === index ? true : false));
-    // }
-
     const handleMenuIconClick = () => setMobileMenu(!mobileMenuOpen);
 
-    const handleLogoClick = () => {
+    const handleNavbarLinkClick = (index) => {
         setMobileMenu(false);
-        setPageSelectionState(0);
-    }
-
-    // useEffect(() => {
-    //     // Save "page selected" values to local storage.
-    //     localStorage.setItem("pageSelected", JSON.stringify(pageSelected));
-    // }, [pageSelected]);
+        setPageSelectionState(index);
+    };
 
     return (
         <div className='navbar'>
             <div className={mobileMenuOpen ? 'navbar-container active-navbar' : 'navbar-container'}>
                 <div className='navbar-logo'>
-                    <Link className='navbar-logo-link' onClick={handleLogoClick} to='/'>
+                    <Link className='navbar-logo-link' onClick={() => handleNavbarLinkClick(0)} to='/'>
                         <div className='navbar-logo-container'>
                             <img className='portfolio-logo' src={process.env.PUBLIC_URL + '/portfolioLogo1024-Light.PNG'} alt='Logo' />
                         </div>
@@ -52,10 +36,10 @@ function Navbar() {
                 <div className={mobileMenuOpen ? 'navbar-menu active-menu' : 'navbar-menu'}>
                     <div className='navbar-menu-container'>
                         <div className='navbar-menu-links'>
-                            <Link className={pageSelected[0] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => setPageSelectionState(0)} to='/'>Home</Link>
-                            <Link className={pageSelected[1] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => setPageSelectionState(1)} to='/devlogs'>Devlogs</Link>
-                            <Link className={pageSelected[2] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => setPageSelectionState(2)} to='/projects'>Projects</Link>
-                            <Link className={pageSelected[3] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => setPageSelectionState(3)} to='/contact'>Contact</Link>
+                            <Link className={pageSelected[0] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => handleNavbarLinkClick(0)} to='/'>Home</Link>
+                            <Link className={pageSelected[1] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => handleNavbarLinkClick(1)} to='/devlogs'>Devlogs</Link>
+                            <Link className={pageSelected[2] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => handleNavbarLinkClick(2)} to='/projects'>Projects</Link>
+                            <Link className={pageSelected[3] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => handleNavbarLinkClick(3)} to='/contact'>Contact</Link>
                         </div>
                         <div className='navbar-menu-buttons'>
                             <span className='navbar-button'>

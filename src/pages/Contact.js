@@ -1,4 +1,5 @@
 import React, { useLayoutEffect } from 'react';
+import Header from '../components/Header';
 import './Contact.scss';
 
 function Contact() {
@@ -13,7 +14,15 @@ function Contact() {
 
     return (
         <div className='contact'>
-            Contact - Under maintenance for transition to portfolio v2.0 - Nov. 20, 2023
+            <Header
+                img_src='/assets/header-images/Gemi-TimeToDyeWithYou.jpeg'
+                img_alt='Gemi - Time To Dye With You'
+                heading='Contact'
+                subheading='Call me, Beep me, If you wanna reach me'
+            />
+            <div className='contact-container'>
+                Contact - Under maintenance for transition to portfolio v2.0 - Nov. 23, 2023
+            </div>
         </div>
     )
 }

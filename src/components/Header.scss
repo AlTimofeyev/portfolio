@@ -1,0 +1,176 @@
+@import '../Constants.scss';
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+    height: 80svh;
+    color: $lightText_LightTheme;
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .header-background-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: inherit;
+            height: inherit;
+            max-width: inherit;
+            max-height: inherit;
+            // mask-image: linear-gradient(to top, rgba(0, 0, 0, 1.0) 85%, transparent 98%);
+
+            $header_mask: linear-gradient(to top, rgba(0, 0, 0, 1.0) 85%, transparent 98%);
+            -webkit-mask-image: $header_mask;
+            mask-image: $header_mask;
+
+            .background-image {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+
+            &::after {
+                background-color: $accent1_LightTheme;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0.15;
+            }
+        }
+
+        .header-heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5rem;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+
+            .heading-container {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+
+                &:first-child {
+                    align-items: flex-end;
+                }
+
+                &:last-child {
+                    align-items: flex-start;
+                }
+
+                .heading {
+                    text-transform: uppercase;
+                    text-align: center;
+                    text-shadow: 0.6rem 0rem $accent2_LightTheme;
+                    font-size: $pageTitle3;
+                    letter-spacing: 0.85rem;
+                }
+
+                .subheading {
+                    background-color: $darkBackground_LightTheme;
+                    padding: 0.5rem 5rem;
+                    border-radius: 5rem;
+                    text-align: center;
+                    font-size: $heading3;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .header {
+        .header-container {
+            .header-heading {
+                .heading-container {
+                    .heading {
+                        font-size: $pageTitle4;
+                        letter-spacing: 0.5rem;
+                    }
+
+                    .subheading {
+                        font-size: $heading5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .header {
+        .header-container {
+            .header-heading {
+                .heading-container {
+                    .heading {
+                        font-size: $pageTitle5;
+                        letter-spacing: 0.35rem;
+                    }
+
+                    .subheading {
+                        font-size: $heading6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header {
+        .header-container {
+            .header-heading {
+                gap: 2.5rem;
+
+                .heading-container {
+                    .heading {
+                        font-size: $pageTitle6;
+                    }
+
+                    .subheading {
+                        font-size: $heading8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .header {
+        .header-container {
+            .header-heading {
+                gap: 1.5rem;
+                
+                .heading-container {
+                    .heading {
+                        font-size: $heading2;
+                    }
+
+                    .subheading {
+                        font-size: $heading8;
+                    }
+                }
+            }
+        }
+    }
+}

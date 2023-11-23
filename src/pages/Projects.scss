@@ -9,4 +9,17 @@
     height: fit-content;
     min-height: 100vh; // Fallback if the following min-height isn't available.
     min-height: 100svh; // Overwrite the previous min-height for small viewports like mobile, if it's availalble.
+
+    .projects-container {
+        color: $darkText_LightTheme;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+
+        // DELETE THIS BIT LATER
+        justify-content: flex-start;
+        height: 100svh;
+    }
 }
