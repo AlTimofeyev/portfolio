@@ -1,10 +1,15 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useContext, useLayoutEffect } from 'react';
+import { NavbarPageSelectionContext } from '../contexts/NavbarContext';
 import Header from '../components/Header';
 import './Projects.scss';
 
 function Projects() {
+    const { pageSelected, setPageSelectionState } = useContext(NavbarPageSelectionContext);
+
     // Run this once when the page is loaded/mounted.
     useLayoutEffect(() => {
+        setPageSelectionState(2);   // Set this page as active in navbar.
+
         window.scroll({
             top: 0,
             left: 0,
@@ -21,7 +26,7 @@ function Projects() {
                 subheading='Available on GitHub'
             />
             <div className='projects-container'>
-                Projects - Under maintenance for transition to portfolio v2.0 - Nov. 23, 2023
+                Projects - Under maintenance for transition to portfolio v2.0 - Nov. 30, 2023
             </div>
         </div>
     )

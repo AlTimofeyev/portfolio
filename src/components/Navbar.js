@@ -9,17 +9,18 @@ function Navbar() {
     const { pageSelected, setPageSelectionState } = useContext(NavbarPageSelectionContext);
 
     const handleMenuIconClick = () => setMobileMenu(!mobileMenuOpen);
+    const closeMobileMenu = () => setMobileMenu(false);
 
-    const handleNavbarLinkClick = (index) => {
-        setMobileMenu(false);
-        setPageSelectionState(index);
-    };
+    // const handleNavbarLinkClick = (index) => {
+    //     setMobileMenu(false);
+    //     setPageSelectionState(index);
+    // };
 
     return (
         <div className='navbar'>
             <div className={mobileMenuOpen ? 'navbar-container active-navbar' : 'navbar-container'}>
                 <div className='navbar-logo'>
-                    <Link className='navbar-logo-link' onClick={() => handleNavbarLinkClick(0)} to='/'>
+                    <Link className='navbar-logo-link' onClick={closeMobileMenu} to='/'>
                         <div className='navbar-logo-container'>
                             <img className='portfolio-logo' src={process.env.PUBLIC_URL + '/portfolioLogo1024-Light.PNG'} alt='Logo' />
                         </div>
@@ -36,10 +37,10 @@ function Navbar() {
                 <div className={mobileMenuOpen ? 'navbar-menu active-menu' : 'navbar-menu'}>
                     <div className='navbar-menu-container'>
                         <div className='navbar-menu-links'>
-                            <Link className={pageSelected[0] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => handleNavbarLinkClick(0)} to='/'>Home</Link>
-                            <Link className={pageSelected[1] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => handleNavbarLinkClick(1)} to='/devlogs'>Devlogs</Link>
-                            <Link className={pageSelected[2] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => handleNavbarLinkClick(2)} to='/projects'>Projects</Link>
-                            <Link className={pageSelected[3] ? 'navbar-link active-link' : 'navbar-link'} onClick={() => handleNavbarLinkClick(3)} to='/contact'>Contact</Link>
+                            <Link className={pageSelected[0] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/'>Home</Link>
+                            <Link className={pageSelected[1] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/devlogs'>Devlogs</Link>
+                            <Link className={pageSelected[2] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/projects'>Projects</Link>
+                            <Link className={pageSelected[3] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/contact'>Contact</Link>
                         </div>
                         <div className='navbar-menu-buttons'>
                             <span className='navbar-button'>
@@ -77,3 +78,5 @@ export default Navbar
 
 // Figure out how to implement browser history in next iteration of website.
 // Currently, the user using the browser back/forward buttons breaks navbar navigation.
+// A janky solution to this for now could be having each page set the active navbar link
+// in the useLayoutEffect component on page load.

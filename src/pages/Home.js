@@ -38,6 +38,8 @@ function Home() {
 
     // Run this once when the page is loaded/mounted.
     useLayoutEffect(() => {
+        setPageSelectionState(0);   // Set this page as active in navbar.
+
         // window.scrollTo(0, 0);
 
         // window.scroll({
@@ -580,7 +582,7 @@ function Home() {
                 <div className='home-section' ref={redirectPageRef}>
                     <div className='page-redirect'>
                         <div className='page-redirect-container'>
-                            <Link className='page-redirect-link' onClick={() => setPageSelectionState(2)} to='/projects'>
+                            <Link className='page-redirect-link' to='/projects'>
                                 <div className='redirect-title'>Projects</div>
                                 <div className='redirect-icon'>
                                     <i className='fa-solid fa-right-long'></i>
