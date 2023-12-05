@@ -30,6 +30,14 @@ $pageTitle6: 5rem;
 // ************************************
 // ********** WEBSITE COLORS **********
 // ************************************
+// Success Colors
+$successLight: #8cff8c;
+$successDark: #77d977;
+
+// Failure Colors
+$failureLight: #f26161;
+$failureDark: #cc6666;
+
 // Gold palette
 $superLightGold: #fff9e6;
 $veryVeryLightGold: #fff4cc;
@@ -77,6 +85,10 @@ $secondary_LightTheme: $veryLightGold;
 $accent1_LightTheme: $gold;
 $accent2_LightTheme: $deepRoyalPurple;
 
+// Success and Failure colors for Light Theme
+$success_LightTheme: $successDark;
+$failure_LightTheme: $failureDark;
+
 
 
 
@@ -95,3 +107,7 @@ $primary_DarkTheme: $royalPurple;
 $secondary_DarkTheme: $veryDarkDeepRoyalPurple;
 $accent1_DarkTheme: $deepRoyalPurple;
 $accent2_DarkTheme: $gold;
+
+// Success and Failure colors for Dark Theme
+$success_DarkTheme: $successLight;
+$failure_DarkTheme: $failureLight;
