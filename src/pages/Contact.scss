@@ -201,10 +201,12 @@
                                 position: absolute;
 
                                 .success-alert {
+                                    text-align: center;
                                     color: $success_LightTheme;
                                 }
 
                                 .failure-alert {
+                                    text-align: center;
                                     color: $failure_LightTheme;
                                 }
                             }
@@ -239,6 +241,78 @@
 
                 .form {
                     justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact {
+        .contact-container {
+            .contact-section {
+                .form {
+                    .form-container {
+                        width: 100%;
+                        min-width: initial;
+
+                        .form-actions {
+                            justify-content: center;
+                            flex-direction: column;
+
+                            .button-container {
+                                justify-content: center;
+                                width: 100%;
+
+                                .send-button {
+                                    width: 90%;
+                                    padding: 1.5rem 2rem;
+                                }
+                            }
+
+                            .alert-messages {
+                                justify-content: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .contact {
+        .contact-container {
+            .contact-section {
+                .message {
+                    .message-container {
+                        align-items: center;
+                        width: 100%;
+
+                        .message-group {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-direction: column;
+
+                            .message-subtitle {
+                                text-align: center;
+                                font-size: $heading5;
+                            }
+
+                            .message-title {
+                                text-align: center;
+                                font-size: $heading1;
+
+                            }
+
+                            .message-details {
+                                text-align: center;
+                                font-size: $defaultFontSize;
+                            }
+                        }
+                    }
                 }
             }
         }

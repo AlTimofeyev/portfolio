@@ -20,13 +20,13 @@ function Projects() {
     return (
         <div className='projects'>
             <Header
-                img_src='/assets/header-images/FirPinecones.JPG'
-                img_alt='Unknown Photographer - Fir Pinecones'
+                img_src='/assets/header-images/OsmanRana-FirPinecones.JPG'
+                img_alt='Osman Rana - Fir Pinecones - INSTAGRAM: @ranagraphsfamily - SOURCE: https://unsplash.com/photos/tilt-shit-lens-photography-of-pine-cones-IRSyulBDNc0'
                 heading='Projects'
                 subheading='Available on GitHub'
             />
             <div className='projects-container'>
-                Projects - Under maintenance for transition to portfolio v2.0 - Nov. 30, 2023
+                Projects - Under maintenance for transition to portfolio v2.0 - Dec. 7, 2023
             </div>
         </div>
     )

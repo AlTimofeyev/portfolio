@@ -21,12 +21,12 @@ function Devlogs() {
         <div className='devlogs'>
             <Header
                 img_src='/assets/header-images/ArnoSmit-CherryBlossoms.jpeg'
-                img_alt='Arno Smit - Cherry Blossoms'
+                img_alt='Arno Smit - Cherry Blossoms - TWITTER: @_entreprenerd - SOURCE: https://unsplash.com/photos/low-angle-photo-of-cherry-blossoms-tree-sKJ7zSylUao'
                 heading='Devlogs'
                 subheading='Progress Archive of Different Projects'
             />
             <div className='devlogs-container'>
-                Devlogs - Under maintenance for transition to portfolio v2.0 - Nov. 30, 2023
+                Devlogs - Under maintenance for transition to portfolio v2.0 - Dec. 7, 2023
             </div>
         </div>
     )

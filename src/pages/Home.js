@@ -272,7 +272,7 @@ function Home() {
                                                 <span className='reveal-fact-icon'>i</span>
                                                 <div className='fact-container'>
                                                     <p className='fact'>
-                                                        I relishing the challenge of learning new skills and technologies in the process.
+                                                        I relish the challenge of learning new skills and technologies in the process.
                                                     </p>
                                                 </div>
                                             </div>

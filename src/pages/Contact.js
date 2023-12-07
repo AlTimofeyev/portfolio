@@ -47,11 +47,10 @@ function Contact() {
         <div className='contact'>
             <Header
                 img_src='/assets/header-images/Gemi-TimeToDyeWithYou.jpeg'
-                img_alt='Gemi - Time To Dye With You'
+                img_alt='Gemi - Time To Dye With You - TWITTER: @gemi333 - SOURCE: https://www.pixiv.net/en/artworks/96195951'
                 heading='Contact'
                 subheading='Call me, Beep me, If you wanna reach me'
             />
-            {/* Contact - Under maintenance for transition to portfolio v2.0 - Nov. 30, 2023 */}
             <div className='contact-container'>
                 <div className='contact-section'>
                     <div className='message'>
