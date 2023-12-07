@@ -1,0 +1,47 @@
+[
+    {
+        "year": "2023",
+        "month": "December",
+        "day": "7",
+        "project": "Portfolio Website",
+        "subject": "Transition to Portfolio V2.0",
+        "startDate": "September 10, 2023",
+        "content": [
+            {
+                "title": "Navbar",
+                "desc": [
+                    {
+                        "paragraphBlock": [
+                            "The current navigation is handled using HashRouter becuase BrowserRouter",
+                            "is not capable of handling page routing with GitHub Pages.",
+                            "As of this current update to the website, the browser back/forward navigation",
+                            "buttons break the active navbar link. I will need to figure out how to implement",
+                            "browser history in the next iteration of the website. For now, I used a quick-fix",
+                            "solution to this problem, where each individual page will set the active navbar link",
+                            "by using a navbar Context to save and load the active navbar link from local storage.",
+                            "Some of the resources used to help with this are listed below."
+                        ]
+                    },
+                    {
+                        "paragraphBlock": [
+                            "As a quick note, it will probalby be best to save the navbar information to session",
+                            "storage instead of local storage. Session storage get's wiped when the user leaves the",
+                            "page while the local storage will persist. The local storage ends up breaking the navbar",
+                            "active link as well, when the user revisits the page. The quick-fix solution is a temporary",
+                            "fix for this issue at the moment."
+                        ]
+                    },
+                    {
+                        "paragraphBlock": [
+                            "Resources Used Include:"
+                        ],
+                        "listBlock": [
+                            "https://blog.logrocket.com/using-localstorage-react-hooks/",
+                            "https://www.geeksforgeeks.org/how-to-share-state-across-react-components-with-context/"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
