@@ -19,7 +19,7 @@
                             "browser history in the next iteration of the website. For now, I used a quick-fix",
                             "solution to this problem, where each individual page will set the active navbar link",
                             "by using a navbar Context to save and load the active navbar link from local storage.",
-                            "Some of the resources used to help with this are listed below."
+                            "Opening a link via CMD + <click> / CTRL + <click> still breaks the navbar active link though."
                         ]
                     },
                     {
