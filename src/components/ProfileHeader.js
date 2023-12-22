@@ -42,13 +42,11 @@ function ProfileHeader() {
                     y: 0,
                     stagger: 0.05,
                     duration: 0.5,
-                    delay: 0.5,
                     ease: 'power1.inOut'
                 })
                 .to(profileButtons.current, {
                     opacity: 1,
                     duration: 0.8,
-                    delay: 0.2,
                     ease: 'power2.in',
                     pointerEvents: 'all'
                 });
@@ -93,13 +91,11 @@ function ProfileHeader() {
                     y: 0,
                     stagger: 0.05,
                     duration: 0.5,
-                    delay: 0.5,
                     ease: 'power1.inOut'
                 })
                 .to(profileButtons.current, {
                     opacity: 1,
                     duration: 0.8,
-                    delay: 0.2,
                     ease: 'power2.in',
                     pointerEvents: 'all'
                 });
@@ -144,13 +140,11 @@ function ProfileHeader() {
                     y: 0,
                     stagger: 0.05,
                     duration: 0.5,
-                    delay: 0.5,
                     ease: 'power1.inOut'
                 })
                 .to(profileButtons.current, {
                     opacity: 1,
                     duration: 0.8,
-                    delay: 0.2,
                     ease: 'power2.in',
                     pointerEvents: 'all'
                 });
@@ -195,13 +189,11 @@ function ProfileHeader() {
                     y: 0,
                     stagger: 0.05,
                     duration: 0.5,
-                    delay: 0.5,
                     ease: 'power1.inOut'
                 })
                 .to(profileButtons.current, {
                     opacity: 1,
                     duration: 0.8,
-                    delay: 0.2,
                     ease: 'power2.in',
                     pointerEvents: 'all'
                 });
@@ -246,13 +238,11 @@ function ProfileHeader() {
                     y: 0,
                     stagger: 0.05,
                     duration: 0.5,
-                    delay: 0.5,
                     ease: 'power1.inOut'
                 })
                 .to(profileButtons.current, {
                     opacity: 1,
                     duration: 0.8,
-                    delay: 0.2,
                     ease: 'power2.in',
                     pointerEvents: 'all'
                 });
@@ -297,13 +287,11 @@ function ProfileHeader() {
                     y: 0,
                     stagger: 0.05,
                     duration: 0.5,
-                    delay: 0.5,
                     ease: 'power1.inOut'
                 })
                 .to(profileButtons.current, {
                     opacity: 1,
                     duration: 0.8,
-                    delay: 0.2,
                     ease: 'power2.in',
                     pointerEvents: 'all'
                 });

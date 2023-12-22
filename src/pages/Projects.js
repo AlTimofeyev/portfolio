@@ -26,7 +26,7 @@ function Projects() {
                 subheading='Available on GitHub'
             />
             <div className='projects-container'>
-                Projects - Under maintenance for transition to portfolio v2.0 - Dec. 7, 2023
+                Projects - Under maintenance for transition to portfolio v2.0 - Dec. 21, 2023
             </div>
         </div>
     )

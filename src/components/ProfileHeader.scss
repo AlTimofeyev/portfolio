@@ -113,28 +113,38 @@
 
                 .primary-btn,
                 .highlighted-btn {
-                    border: 1px solid $accent1_LightTheme;
-
                     &:hover {
-                        background-color: $accent2_LightTheme;
-                        color: $accent1_LightTheme;
-                        border: 1px solid $accent2_LightTheme;
+                        // background-color: $accent2_LightTheme;
+                        // color: $accent1_LightTheme;
+                        // border: 1px solid $accent2_LightTheme;
                         box-shadow: 0px 0px 10px $accent2_LightTheme;
-                        transform: scale(1.05);
+                        transform: scale(1.025);
                     }
 
                     &:active {
-                        transform: scale(0.95);
+                        transform: scale(0.98);
                     }
                 }
 
                 .primary-btn {
+                    color: $darkText_LightTheme;
                     background-color: $accent1_LightTheme;
+
+                    &:hover {
+                        background-color: $primary_LightTheme;
+                        box-shadow: 0px 0px 10px $accent1_LightTheme;
+                    }
                 }
 
                 .highlighted-btn {
-                    background-color: $secondary_LightTheme;
-                    background-color: transparentize($primary_LightTheme, 0.5);
+                    color: $lightText_LightTheme;
+                    background-color: $accent2_LightTheme;
+                    // background-color: transparentize($accent2_LightTheme, 0.5);
+
+                    &:hover {
+                        background-color: $primary_DarkTheme;
+                        box-shadow: 0px 0px 10px $accent1_DarkTheme;
+                    }
                 }
             }
         }

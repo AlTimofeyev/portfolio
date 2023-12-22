@@ -4,19 +4,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    top: -90px; // Navbar height + Navbar padding.
     overflow: hidden;
     width: 100%;
-    height: 80vh;
-    height: 80svh;
-    color: $lightText_LightTheme;
+    height: 95vh;
+    height: 95svh;
 
     .header-container {
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
-        top: 0;
-        left: 0;
+        // position: relative;
+        // top: 0;
+        // left: 0;
         width: 100%;
         height: 100%;
 
@@ -28,11 +29,12 @@
             height: inherit;
             max-width: inherit;
             max-height: inherit;
+            object-fit: contain;
             // mask-image: linear-gradient(to top, rgba(0, 0, 0, 1.0) 85%, transparent 98%);
 
-            $header_mask: linear-gradient(to top, rgba(0, 0, 0, 1.0) 85%, transparent 98%);
-            -webkit-mask-image: $header_mask;
-            mask-image: $header_mask;
+            // $header_mask: linear-gradient(to top, rgba(0, 0, 0, 1.0) 85%, transparent 98%);
+            // -webkit-mask-image: $header_mask;
+            // mask-image: $header_mask;
 
             .background-image {
                 object-fit: cover;
@@ -41,12 +43,11 @@
             }
 
             &::after {
-                background-color: $accent1_LightTheme;
                 content: '';
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                opacity: 0.15;
+                box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
             }
         }
 
@@ -78,20 +79,48 @@
                 }
 
                 .heading {
+                    color: $lightText_LightTheme;
                     text-transform: uppercase;
                     text-align: center;
-                    text-shadow: 0.6rem 0rem $accent2_LightTheme;
+                    // text-shadow: 0.5rem 0rem $accent1_LightTheme;
+                    text-shadow: 0.5rem 0rem $accent2_LightTheme;
                     font-size: $pageTitle3;
                     letter-spacing: 0.85rem;
                 }
 
                 .subheading {
-                    background-color: $darkBackground_LightTheme;
+                    color: white;
                     padding: 0.5rem 5rem;
                     border-radius: 5rem;
                     text-align: center;
                     font-size: $heading3;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 650px) {
+    .header {
+        height: 110vh;
+        height: 110svh;
+
+        .header-container {
+            .header-heading {
+                gap: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .header {
+        height: 150vh;
+        height: 150svh;
+
+        .header-container {
+            .header-heading {
+                gap: 1rem;
             }
         }
     }
@@ -160,7 +189,7 @@
         .header-container {
             .header-heading {
                 gap: 1.5rem;
-                
+
                 .heading-container {
                     .heading {
                         font-size: $heading2;
