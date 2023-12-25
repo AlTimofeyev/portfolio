@@ -2,13 +2,13 @@
 
 .contact {
     display: flex;
-    align-items: center; // For Header
+    align-items: center;
     justify-content: center;
-    flex-direction: column; // For Header
+    flex-direction: column;
     gap: 200px;
     height: fit-content;
-    min-height: 100vh; // Fallback if the following min-height isn't available.
-    min-height: 100svh; // Overwrite the previous min-height for small viewports like mobile, if it's availalble.
+    min-height: 100vh;
+    min-height: 100svh;
 
     .contact-container {
         color: $darkText_LightTheme;
@@ -174,7 +174,7 @@
                                 color: inherit;
                                 background-color: $accent1_LightTheme;
                                 cursor: pointer;
-                                transition: background-color 0.25s ease-in-out, transform 0.1s ease-in-out;
+                                transition: background-color 0.25s ease-in-out, transform 0.2s ease-in-out;
 
                                 &:hover {
                                     background-color: $primary_LightTheme;

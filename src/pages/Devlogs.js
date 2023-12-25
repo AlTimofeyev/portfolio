@@ -26,7 +26,7 @@ function Devlogs() {
                 subheading='Development Archives'
             />
             <div className='devlogs-container'>
-                Devlogs - Under maintenance for transition to portfolio v2.0 - Dec. 21, 2023
+                Devlogs - Under maintenance for transition to portfolio v2.0 - Dec. 24, 2023
             </div>
         </div>
     )
