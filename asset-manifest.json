@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.93f3e6ca.css",
-    "main.js": "/portfolio/static/js/main.56d1b929.js",
+    "main.css": "/portfolio/static/css/main.dd2f8add.css",
+    "main.js": "/portfolio/static/js/main.d8f8a990.js",
+    "static/media/Enso_Circle.svg": "/portfolio/static/media/Enso_Circle.1c68511a399d8a011860bfc126ffff37.svg",
     "static/media/Intro_Icon-ML.svg": "/portfolio/static/media/Intro_Icon-ML.9dc848cd74e2ca27279c18c227418802.svg",
     "static/media/Hand_Waving_Icon-Thick.svg": "/portfolio/static/media/Hand_Waving_Icon-Thick.326a9d4c4a52c1de43040e2665034562.svg",
     "static/media/Proficiency_Icon-Gold.svg": "/portfolio/static/media/Proficiency_Icon-Gold.711148a543e9b35ee82b8400ecc77f1a.svg",
@@ -13,15 +14,17 @@
     "static/media/Proficiency_Icon-Diamond.svg": "/portfolio/static/media/Proficiency_Icon-Diamond.2a31b92010cbf4e4ef1c96a5f4063034.svg",
     "static/media/Proficiency_Icon-Bronze.svg": "/portfolio/static/media/Proficiency_Icon-Bronze.795f4c90c741fb98cdaf50a13a49cd87.svg",
     "static/media/Social_Icon-StackOverflow.svg": "/portfolio/static/media/Social_Icon-StackOverflow.d19c1241abd75bcf61bb4ec885901f94.svg",
+    "static/media/Social_Icon-PyPI.svg": "/portfolio/static/media/Social_Icon-PyPI.b6d5dff53a3c34cb436fa58197cb1c99.svg",
     "static/media/Social_Icon-LinkedIn.svg": "/portfolio/static/media/Social_Icon-LinkedIn.0dc5eb2db5024c5e02dee2c977a9bd9f.svg",
     "static/media/Intro_Icon-Reading.svg": "/portfolio/static/media/Intro_Icon-Reading.a67dcc528af3fd833944e4f1b8adabae.svg",
     "static/media/Section_Icon.svg": "/portfolio/static/media/Section_Icon.c6e1107cfc264b871232122751c595b1.svg",
     "index.html": "/portfolio/index.html",
-    "main.93f3e6ca.css.map": "/portfolio/static/css/main.93f3e6ca.css.map",
-    "main.56d1b929.js.map": "/portfolio/static/js/main.56d1b929.js.map"
+    "static/media/Skill_Background.svg": "/portfolio/static/media/Skill_Background.af75fd9126060c90b5b9c7cca588b235.svg",
+    "main.dd2f8add.css.map": "/portfolio/static/css/main.dd2f8add.css.map",
+    "main.d8f8a990.js.map": "/portfolio/static/js/main.d8f8a990.js.map"
   },
   "entrypoints": [
-    "static/css/main.93f3e6ca.css",
-    "static/js/main.56d1b929.js"
+    "static/css/main.dd2f8add.css",
+    "static/js/main.d8f8a990.js"
   ]
 }
