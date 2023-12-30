@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useContext, useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { NavbarPageSelectionContext } from '../contexts/NavbarContext';
@@ -32,7 +32,7 @@ function Projects() {
         });
     }, []);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         let gcontext = gsap.context(() => {
             gsap.fromTo(mentionedProjectsRef.current, {
                 opacity: 0,
