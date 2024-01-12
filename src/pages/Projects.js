@@ -1,9 +1,8 @@
-import React, { useContext, useLayoutEffect, useRef } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { NavbarPageSelectionContext } from '../contexts/NavbarContext';
 import Header from '../components/Header';
-import Video from '../components/Video';
 import CardItem from '../components/CardItem';
 import { ReactComponent as SkillBackground } from '../src-assets/Skill_Background.svg';
 import { ReactComponent as GitHubIcon } from '../src-assets/social-icons/Social_Icon-GitHub.svg';
@@ -17,9 +16,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Projects() {
     const { pageSelected, setPageSelectionState } = useContext(NavbarPageSelectionContext);
+    const [loadedMedia, setLoadedMedia] = useState([null, null, null, null, null, null, null, null, null]);
+    const portfolioVideoRef = useRef(null);
+    const particleSwarmVideoRef = useRef(null);
+    const geneticAlgorithmVideoRef = useRef(null);
+    const fireflySwarmVideoRef = useRef(null);
     const featuredProjectsRef = useRef(null);
     const mentionedProjectsRef = useRef(null);
 
+    const setLoadedMediaState = (index) => {
+        setLoadedMedia(prevState => prevState.map((mediaLoadedState, idx) => idx === index ? true : mediaLoadedState));
+    }
 
     // Run this once when the page is loaded/mounted.
     useLayoutEffect(() => {
@@ -32,7 +39,70 @@ function Projects() {
         });
     }, []);
 
-    useLayoutEffect(() => {
+    // Window event listeners.
+    useEffect(() => {
+        const refreshAnimations = () => {
+            ScrollTrigger.refresh();
+        }
+
+        const playPauseVideo = () => {
+            if (portfolioVideoRef.current) {
+                if (portfolioVideoRef.current.getBoundingClientRect().top >= window.innerHeight - window.innerHeight / 3 ||
+                    portfolioVideoRef.current.getBoundingClientRect().bottom <= window.innerHeight / 3) {
+                    portfolioVideoRef.current.pause();
+                }
+                else {
+                    portfolioVideoRef.current.play();
+                }
+            }
+
+            if (particleSwarmVideoRef.current) {
+                if (particleSwarmVideoRef.current.getBoundingClientRect().top >= window.innerHeight - window.innerHeight / 3 ||
+                    particleSwarmVideoRef.current.getBoundingClientRect().bottom <= window.innerHeight / 3) {
+                    particleSwarmVideoRef.current.pause();
+                }
+                else {
+                    particleSwarmVideoRef.current.play();
+                }
+            }
+
+            if (geneticAlgorithmVideoRef.current) {
+                if (geneticAlgorithmVideoRef.current.getBoundingClientRect().top >= window.innerHeight - window.innerHeight / 3 ||
+                    geneticAlgorithmVideoRef.current.getBoundingClientRect().bottom <= window.innerHeight / 3) {
+                    geneticAlgorithmVideoRef.current.pause();
+                }
+                else {
+                    geneticAlgorithmVideoRef.current.play();
+                }
+            }
+
+            if (fireflySwarmVideoRef.current) {
+                if (fireflySwarmVideoRef.current.getBoundingClientRect().top >= window.innerHeight - window.innerHeight / 3 ||
+                    fireflySwarmVideoRef.current.getBoundingClientRect().bottom <= window.innerHeight / 3) {
+                    fireflySwarmVideoRef.current.pause();
+                }
+                else {
+                    fireflySwarmVideoRef.current.play();
+                }
+            }
+        }
+
+        window.addEventListener('resize', refreshAnimations);
+        window.addEventListener("scroll", playPauseVideo);
+
+        return () => {
+            window.removeEventListener("scroll", playPauseVideo);   // Cleanup to prevent memory leak.
+            window.removeEventListener('resize', refreshAnimations);
+        };
+    }, []);
+
+    // Refresh snimation based on loaded media.
+    useEffect(() => {
+        ScrollTrigger.refresh();
+    }, [loadedMedia]);
+
+    // Set the page animations.
+    useEffect(() => {
         let gcontext = gsap.context(() => {
             gsap.fromTo(mentionedProjectsRef.current, {
                 opacity: 0,
@@ -44,7 +114,7 @@ function Projects() {
                     trigger: mentionedProjectsRef.current,
                     scrub: true,
                     start: 'top bottom',
-                    end: 'top 60%',
+                    end: 'top 70%',
                     invalidateOnRefresh: true
                 }
             });
@@ -67,7 +137,7 @@ function Projects() {
                         trigger: media_sample,
                         scrub: true,
                         start: 'top bottom',
-                        end: 'top 60%',
+                        end: 'top 70%',
                         invalidateOnRefresh: true
                     }
                 });
@@ -82,7 +152,7 @@ function Projects() {
                     scrollTrigger: {
                         trigger: media_sample,
                         scrub: true,
-                        start: 'bottom 30%',
+                        start: 'bottom 20%',
                         end: 'bottom top',
                         invalidateOnRefresh: true
                     }
@@ -100,7 +170,7 @@ function Projects() {
                         trigger: project_description,
                         scrub: true,
                         start: 'top bottom',
-                        end: 'top 60%',
+                        end: 'top 70%',
                         invalidateOnRefresh: true
                     }
                 });
@@ -115,7 +185,7 @@ function Projects() {
                     scrollTrigger: {
                         trigger: project_description,
                         scrub: true,
-                        start: 'bottom 30%',
+                        start: 'bottom 20%',
                         end: 'bottom top',
                         invalidateOnRefresh: true
                     }
@@ -137,7 +207,7 @@ function Projects() {
                         trigger: project,
                         scrub: true,
                         start: 'top bottom',
-                        end: 'top 60%',
+                        end: 'top 80%',
                         invalidateOnRefresh: true
                     }
                 });
@@ -152,19 +222,19 @@ function Projects() {
                     scrollTrigger: {
                         trigger: project,
                         scrub: true,
-                        start: 'bottom 30%',
+                        start: 'bottom 20%',
                         end: 'bottom top',
                         invalidateOnRefresh: true
                     }
                 });
             });
         });
-        
+
         return () => {
             gcontext.revert();
             screenMediaMatched.revert();
         };
-    }, []);
+    }, [featuredProjectsRef, mentionedProjectsRef]);
 
     return (
         <div className='projects'>
@@ -185,6 +255,7 @@ function Projects() {
                                             className='project-sample'
                                             src={process.env.PUBLIC_URL + '/assets/project-samples/python-palette-extractor-sample/tsujin_bohboh-Holiday-Sample.PNG'}
                                             alt='Tsujiko / つじこ - Holiday - TWITTER: @tsujin_bohboh - SOURCE: https://www.pixiv.net/en/artworks/100516589'
+                                            onLoad={() => setLoadedMediaState(0)}
                                         />
                                         <figcaption className='sample-caption'>
                                             <div className='icon-container'>
@@ -216,6 +287,7 @@ function Projects() {
                                             className='project-sample'
                                             src={process.env.PUBLIC_URL + '/assets/project-samples/python-palette-extractor-sample/Osman_Rana-FirPinecones-Sample.PNG'}
                                             alt='Osman Rana - Fir Pinecones - INSTAGRAM: @ranagraphsfamily - SOURCE: https://unsplash.com/photos/tilt-shit-lens-photography-of-pine-cones-IRSyulBDNc0'
+                                            onLoad={() => setLoadedMediaState(1)}
                                         />
                                         <figcaption className='sample-caption'>
                                             <div className='icon-container'>
@@ -247,6 +319,7 @@ function Projects() {
                                             className='project-sample'
                                             src={process.env.PUBLIC_URL + '/assets/project-samples/python-palette-extractor-sample/Mumuxi-Ganyu_Genshin_Impact-Sample.PNG'}
                                             alt='Mumuxi / 木木夕 / 木木西 - Ganyu Genshin Impact - Pixiv: https://www.pixiv.net/en/users/57067483 - SOURCE: https://www.pixiv.net/en/artworks/93920392'
+                                            onLoad={() => setLoadedMediaState(2)}
                                         />
                                         <figcaption className='sample-caption'>
                                             <div className='icon-container'>
@@ -278,6 +351,7 @@ function Projects() {
                                             className='project-sample'
                                             src={process.env.PUBLIC_URL + '/assets/project-samples/python-palette-extractor-sample/Craig_Adderley-LongPondAutumnRoad-Sample.PNG'}
                                             alt='Craig Adderley - Long Pond Autumn Road - INSTAGRAM: @throughcoatedglass - SOURCE: https://www.pexels.com/photo/concrete-road-between-trees-1563356/'
+                                            onLoad={() => setLoadedMediaState(3)}
                                         />
                                         <figcaption className='sample-caption'>
                                             <div className='icon-container'>
@@ -420,10 +494,23 @@ function Projects() {
                             <div className='project-media'>
                                 <div className='media-container'>
                                     <figure className='sample-container mobile-sample'>
-                                        <Video
+                                        <video
+                                            className='project-sample'
+                                            ref={portfolioVideoRef}
+                                            playsInline
+                                            muted
+                                            loop
+                                            onLoadedData={() => setLoadedMediaState(4)}
+                                        >
+                                            <source
+                                                src={process.env.PUBLIC_URL + '/assets/project-samples/portfolio-website-sample/Portfolio-2v-Sample.mov'}
+                                                type='video/mp4'
+                                            />
+                                        </video>
+                                        {/* <Video
                                             vid_src='/assets/project-samples/portfolio-website-sample/Portfolio-2v-Sample.mov'
                                             vid_type='video/mp4'
-                                        />
+                                        /> */}
                                         <figcaption className='sample-caption'>
                                             <div className='icon-container'>
                                                 <i className='icon fa-solid fa-seedling'></i>
@@ -514,10 +601,23 @@ function Projects() {
                             <div className='project-media'>
                                 <div className='media-container'>
                                     <figure className='sample-container mobile-sample'>
-                                        <Video
+                                        <video
+                                            className='project-sample'
+                                            ref={particleSwarmVideoRef}
+                                            playsInline
+                                            muted
+                                            loop
+                                            onLoadedData={() => setLoadedMediaState(5)}
+                                        >
+                                            <source
+                                                src={process.env.PUBLIC_URL + '/assets/project-samples/optimization-algorithm-visualizer-sample/ParticleSwarmOptimization-Sample.mov'}
+                                                type='video/mp4'
+                                            />
+                                        </video>
+                                        {/* <Video
                                             vid_src='/assets/project-samples/optimization-algorithm-visualizer-sample/ParticleSwarmOptimization-Sample.mov'
                                             vid_type='video/mp4'
-                                        />
+                                        /> */}
                                         <figcaption className='sample-caption'>
                                             <div className='icon-container'>
                                                 <i className='icon fa-solid fa-seedling'></i>
@@ -528,10 +628,23 @@ function Projects() {
                                         </figcaption>
                                     </figure>
                                     <figure className='sample-container'>
-                                        <Video
+                                        <video
+                                            className='project-sample'
+                                            ref={geneticAlgorithmVideoRef}
+                                            playsInline
+                                            muted
+                                            loop
+                                            onLoadedData={() => setLoadedMediaState(6)}
+                                        >
+                                            <source
+                                                src={process.env.PUBLIC_URL + '/assets/project-samples/optimization-algorithm-visualizer-sample/GeneticAlgorithm-Sample.mov'}
+                                                type='video/mp4'
+                                            />
+                                        </video>
+                                        {/* <Video
                                             vid_src='/assets/project-samples/optimization-algorithm-visualizer-sample/GeneticAlgorithm-Sample.mov'
                                             vid_type='video/mp4'
-                                        />
+                                        /> */}
                                         <figcaption className='sample-caption'>
                                             <div className='icon-container'>
                                                 <i className='icon fa-solid fa-seedling'></i>
@@ -542,10 +655,23 @@ function Projects() {
                                         </figcaption>
                                     </figure>
                                     <figure className='sample-container'>
-                                        <Video
+                                        <video
+                                            className='project-sample'
+                                            ref={fireflySwarmVideoRef}
+                                            playsInline
+                                            muted
+                                            loop
+                                            onLoadedData={() => setLoadedMediaState(7)}
+                                        >
+                                            <source
+                                                src={process.env.PUBLIC_URL + '/assets/project-samples/optimization-algorithm-visualizer-sample/FireflyOptimization-Sample.mov'}
+                                                type='video/mp4'
+                                            />
+                                        </video>
+                                        {/* <Video
                                             vid_src='/assets/project-samples/optimization-algorithm-visualizer-sample/FireflyOptimization-Sample.mov'
                                             vid_type='video/mp4'
-                                        />
+                                        /> */}
                                         <figcaption className='sample-caption'>
                                             <div className='icon-container'>
                                                 <i className='icon fa-solid fa-seedling'></i>
@@ -628,6 +754,7 @@ function Projects() {
                                             className='project-sample'
                                             src={process.env.PUBLIC_URL + '/assets/project-samples/custom-data-structures-sample/TemplatedDataStructures-Sample.png'}
                                             alt='Templated data structures library written in C++'
+                                            onLoad={() => setLoadedMediaState(8)}
                                         />
                                         <figcaption className='sample-caption'>
                                             <div className='icon-container'>
@@ -755,3 +882,13 @@ function Projects() {
 }
 
 export default Projects
+
+// Adding an event listener for window scrolling needs to have a function
+// attached to it in the parameters, otherwise you can't remove the scroll event listner.
+// In this case, I attached the playPauseVideo function to 
+// window.addEventListener. This way, my parameters for window.addEventListener
+// and window.removeEventListener matched.
+// Resources Used for understanding this:
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
+// https://stackoverflow.com/q/64377884/17047816
+// https://stackoverflow.com/q/36207398/17047816
