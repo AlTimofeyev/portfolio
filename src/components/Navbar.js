@@ -75,6 +75,7 @@ export default Navbar
 
 // Local Storage Resource Info Used:
 // https://blog.logrocket.com/using-localstorage-react-hooks/
+// https://www.geeksforgeeks.org/how-to-share-state-across-react-components-with-context/
 
 // Figure out how to implement browser history in next iteration of website.
 // Currently, the user using the browser back/forward buttons breaks navbar navigation.

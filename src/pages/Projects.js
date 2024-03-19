@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { NavbarPageSelectionContext } from '../contexts/NavbarContext';
+import { DevlogPostContext } from '../contexts/DevlogPostContext';
 import Header from '../components/Header';
 import CardItem from '../components/CardItem';
 import { ReactComponent as SkillBackground } from '../src-assets/Skill_Background.svg';
@@ -15,14 +16,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 function Projects() {
-    const { pageSelected, setPageSelectionState } = useContext(NavbarPageSelectionContext);
-    const [loadedMedia, setLoadedMedia] = useState([null, null, null, null, null, null, null, null, null]);
     const portfolioVideoRef = useRef(null);
     const particleSwarmVideoRef = useRef(null);
     const geneticAlgorithmVideoRef = useRef(null);
     const fireflySwarmVideoRef = useRef(null);
     const featuredProjectsRef = useRef(null);
     const mentionedProjectsRef = useRef(null);
+    const [loadedMedia, setLoadedMedia] = useState([null, null, null, null, null, null, null, null, null]);
+    const { pageSelected, setPageSelectionState } = useContext(NavbarPageSelectionContext);
+    const { devlogPostReadMoreOpened, setdevlogPostReadMoreOpened } = useContext(DevlogPostContext);
 
     const setLoadedMediaState = (index) => {
         setLoadedMedia(prevState => prevState.map((mediaLoadedState, idx) => idx === index ? true : mediaLoadedState));
@@ -31,6 +33,12 @@ function Projects() {
     // Run this once when the page is loaded/mounted.
     useLayoutEffect(() => {
         setPageSelectionState(2);   // Set this page as active in navbar.
+
+        // If navigating from the Devlogs page where a Single Devlog Post was opened.
+        if (devlogPostReadMoreOpened) {
+            document.body.classList.remove('suspend-body-scrolling');
+            setdevlogPostReadMoreOpened(false);
+        };
 
         window.scroll({
             top: 0,

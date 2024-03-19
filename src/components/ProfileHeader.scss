@@ -317,3 +317,20 @@
         }
     }
 }
+
+@media screen and (max-height: 650px) {
+    .profile {
+        height: 1px; // So that child elements inherit the height, fit-content doesn't do that.
+        min-height: 110vh; // Fallback if the following min-height isn't available.
+        min-height: 110svh;
+    }
+
+}
+
+@media screen and (max-height: 500px) {
+    .profile {
+        height: 1px; // So that child elements inherit the height, fit-content doesn't do that.
+        min-height: 150vh; // Fallback if the following min-height isn't available.
+        min-height: 150svh;
+    }
+}

@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 200px;
+    gap: 10rem;
     height: fit-content;
     min-height: 100vh;
     min-height: 100svh;
@@ -31,7 +31,7 @@
 
         .featured-section {
             flex-direction: column;
-            gap: 125px;
+            gap: 12rem;
 
 
             .project {
@@ -278,7 +278,7 @@
         }
 
         .honorable-mentions-section {
-            margin-bottom: 250px;
+            margin-bottom: 15rem;
 
             .honorable-container {
                 display: grid;

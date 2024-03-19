@@ -1,6 +1,7 @@
 import React, { useContext, useLayoutEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { NavbarPageSelectionContext } from '../contexts/NavbarContext';
+import { DevlogPostContext } from '../contexts/DevlogPostContext';
 import Header from '../components/Header';
 import './Contact.scss';
 
@@ -9,10 +10,17 @@ function Contact() {
     const [successAlert, setSuccessAlert] = useState(false);
     const [failureAlert, setFailureAlert] = useState(false);
     const { pageSelected, setPageSelectionState } = useContext(NavbarPageSelectionContext);
+    const { devlogPostReadMoreOpened, setdevlogPostReadMoreOpened } = useContext(DevlogPostContext);
 
     // Run this once when the page is loaded/mounted.
     useLayoutEffect(() => {
         setPageSelectionState(3);   // Set this page as active in navbar.
+
+        // If navigating from the Devlogs page where a Single Devlog Post was opened.
+        if (devlogPostReadMoreOpened) {
+            document.body.classList.remove('suspend-body-scrolling');
+            setdevlogPostReadMoreOpened(false);
+        };
 
         window.scroll({
             top: 0,

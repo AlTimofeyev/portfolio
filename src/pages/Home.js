@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { NavbarPageSelectionContext } from '../contexts/NavbarContext';
+import { DevlogPostContext } from '../contexts/DevlogPostContext';
 import { SidebarContext } from '../contexts/SidebarContext';
 import ProfileHeader from '../components/ProfileHeader';
 import SocialSidebar from '../components/SocialSidebar'
@@ -26,11 +27,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 function Home() {
-    const { pageSelected, setPageSelectionState } = useContext(NavbarPageSelectionContext);
-    const [proficiencySelected, setProficiency] = useState([false, false, false, false, false]);
     const homeContainerRef = useRef(null);
     const redirectPageRef = useRef(null);
     const redirectIconTimeline = useRef();
+    const [proficiencySelected, setProficiency] = useState([false, false, false, false, false]);
+    const { pageSelected, setPageSelectionState } = useContext(NavbarPageSelectionContext);
+    const { devlogPostReadMoreOpened, setdevlogPostReadMoreOpened } = useContext(DevlogPostContext);
 
     const setProficiencyState = (index) => {
         setProficiency(prevState => prevState.map((proficiencyState, idx) => idx === index ? !proficiencyState : proficiencyState));
@@ -39,6 +41,12 @@ function Home() {
     // Run this once when the page is loaded/mounted.
     useLayoutEffect(() => {
         setPageSelectionState(0);   // Set this page as active in navbar.
+
+        // If navigating from the Devlogs page where a Single Devlog Post was opened.
+        if (devlogPostReadMoreOpened) {
+            document.body.classList.remove('suspend-body-scrolling');
+            setdevlogPostReadMoreOpened(false);
+        };
 
         // window.scrollTo(0, 0);
 

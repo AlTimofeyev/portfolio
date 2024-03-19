@@ -208,6 +208,7 @@
             }
 
             .navbar-menu {
+                align-items: flex-start;
                 position: fixed;
                 top: 85px;
                 right: -100%;
@@ -218,28 +219,38 @@
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.8s ease-in-out;
+                overflow-y: scroll;
 
                 .navbar-menu-container {
+                    justify-content: flex-start;
                     flex-direction: column;
                     width: 100%;
+                    height: 100%;
+                    min-height: 250px;
 
                     .navbar-menu-links {
+                        justify-content: flex-start;
                         flex-direction: column;
                         width: 100%;
+                        height: 100%;
 
                         .navbar-link {
                             width: 100%;
+                            height: 100%;
+                            min-height: $heading4;
                             font-size: $heading6;
                             font-weight: 600;
                         }
                     }
 
                     .navbar-menu-buttons {
+                        justify-content: flex-start;
                         flex-direction: column;
                         width: 100%;
 
                         .navbar-button {
                             width: 100%;
+                            min-height: $heading4;
                             font-size: $heading6;
                             font-weight: 600;
                         }

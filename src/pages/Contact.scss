@@ -5,10 +5,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 200px;
+    gap: 10rem;
     height: fit-content;
     min-height: 100vh;
     min-height: 100svh;
+    margin-bottom: 15rem;
 
     .contact-container {
         color: $darkText_LightTheme;
@@ -18,8 +19,8 @@
         gap: 5rem;
         width: 100%;
         height: fit-content;
-        min-height: 120vh;
-        min-height: 120svh;
+        // min-height: 120vh;
+        // min-height: 120svh;
 
         .contact-section {
             flex: 1;
@@ -229,14 +230,17 @@
             justify-content: flex-start;
             flex-direction: column;
             gap: 2.5rem;
-            min-height: 180vh;
-            min-height: 180svh;
+            width: 100%;
+            // min-height: 180vh;
+            // min-height: 180svh;
 
             .contact-section {
                 flex: initial;
+                width: 95%;
+                padding: 0;
 
                 .message {
-                    height: 40rem;
+                    height: 30rem;
                 }
 
                 .form {
@@ -313,6 +317,18 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .contact {
+        .contact-container {
+            .contact-section {
+                .message {
+                    height: 45rem;
                 }
             }
         }
