@@ -1,43 +1,153 @@
 [
     {
-        "year": "2023",
-        "month": "December",
-        "day": "7",
+        "year": "2024",
+        "month": "March",
+        "day": "18",
         "project": "Portfolio Website",
-        "subject": "Transition to Portfolio V2.0",
-        "startDate": "September 10, 2023",
+        "subject": "Transition to Portfolio v2.0",
+        "githubLink": "https://github.com/AlTimofeyev/portfolio",
+        "summary": [
+            "The transition to portfolio V2.0 includes some new layouts, a unified color scheme, ",
+            "additional development progress and contact pages, and better navigation. ",
+            "There's also some animated compenents, which were implemented using GreenSock's ",
+            "GSAP javascript animation library."
+        ],
         "content": [
             {
-                "title": "Navbar",
+                "title": "Navigation",
                 "desc": [
                     {
                         "paragraphBlock": [
-                            "The current navigation is handled using HashRouter becuase BrowserRouter",
-                            "is not capable of handling page routing with GitHub Pages.",
-                            "As of this current update to the website, the browser back/forward navigation",
-                            "buttons break the active navbar link. I will need to figure out how to implement",
-                            "browser history in the next iteration of the website. For now, I used a quick-fix",
-                            "solution to this problem, where each individual page will set the active navbar link",
-                            "by using a navbar Context to save and load the active navbar link from local storage.",
-                            "Opening a link via CMD + <click> / CTRL + <click> still breaks the navbar active link though."
+                            "The current navbar navigation is handled using HashRouter becuase BrowserRouter ",
+                            "is not capable of handling page routing with GitHub Pages. ",
+                            "As of this current update to the website, the browser back/forward navigation ",
+                            "buttons break the active navbar link. I will need to figure out how to implement ",
+                            "browser history in the next iteration of the website. For now, I used a quick-fix ",
+                            "solution to this problem, where each individual page will set the active navbar link ",
+                            "by using a navbar Context to save and load the active navbar link from local storage. ",
+                            "Opening a link via CMD + <click> or CTRL + <click> still breaks the active navbar link though."
                         ]
                     },
                     {
                         "paragraphBlock": [
-                            "As a quick note, it will probalby be best to save the navbar information to session",
-                            "storage instead of local storage. Session storage get's wiped when the user leaves the",
-                            "page while the local storage will persist. The local storage ends up breaking the navbar",
-                            "active link as well, when the user revisits the page. The quick-fix solution is a temporary",
+                            "As a quick note, it will probalby be best to save the navbar information to session ",
+                            "storage instead of local storage. Session storage get's wiped when the user leaves the ",
+                            "page while the local storage will persist. The local storage ends up breaking the navbar ",
+                            "active link as well, when the user revisits the page. The quick-fix solution is a temporary ",
                             "fix for this issue at the moment."
                         ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": "2023",
+        "month": "April",
+        "day": "7",
+        "project": "Python Palette Extractor (PyPalEx)",
+        "subject": "Published v1.3.3 of PyPalEx",
+        "githubLink": "https://github.com/AlTimofeyev/pypalex",
+        "pypiLink": "https://pypi.org/project/pypalex/",
+        "summary": [
+            "This log contains updates to the saving options, extraction options, the Extractor ",
+            "class, as well as the extraction process itself. Since this is the first post for ",
+            "this project, the updates listed in this devlog will contain details from v1.3.0 up to ",
+            "v1.3.3."
+        ],
+        "content": [
+            {
+                "title": "Extraction Process",
+                "desc": [
+                    {
+                        "paragraphBlock": [
+                            "The extraction process has been optimized to focus on single image files rather than ",
+                            "focusing on multiple image files. What this means is that, instead of utilizing multi-processing ",
+                            "to extract from multiple images at the same time, multi-processing will now be used ",
+                            "to extract multiple colors from a single image at the same time. This approach decreases ",
+                            "the amount of time that it takes to extract color palettes from images and normalizes it to ",
+                            "about ~5 seconds per image. This inadvertently also decreased the amount of time for extracting ",
+                            "color palettes from multiple images. You can now calculate exactly how much time it will take ",
+                            "to extract colors from images by multiplying 5 seconds by the number of images."
+                        ]
                     },
                     {
                         "paragraphBlock": [
-                            "Resources Used Include:"
-                        ],
-                        "listBlock": [
-                            "https://blog.logrocket.com/using-localstorage-react-hooks/",
-                            "https://www.geeksforgeeks.org/how-to-share-state-across-react-components-with-context/"
+                            "Example: You have 10 images you would like to extract from. So the total wait-time for the ",
+                            "completion of the extraction process would be 5 seconds x 10 images = ~50 seconds."
+                        ]
+                    },
+                    {
+                        "paragraphBlock": [
+                            "The extraction process also differs from that of versions prior to v1.3.0. The eariler method ",
+                            "for extracting colors had a mojority of the process be randomized while the current version ",
+                            "focuses more on a mathematical and algorithmic approach akin to K-Means Clustering. Although ",
+                            "the current algorithmic extraction process is not exactly like K-Means, it does borrow some ",
+                            "concepts from K-Means, like using the average of a cluster of colors as a result for each extracted color. ",
+                            "This approach does have some downsides though, becuase it doesn't account for the noise in color data ",
+                            "where some outlying colors in a cluster may skew the average of that cluster and result in an ",
+                            "inadequate color being extracted. The next approach to this problem will borrow concepts to DBSACN, which ",
+                            "accounts for haveing noise in the data clusters. The DBSCAN algorithm does have a tricky variable to deal with, ",
+                            "called epsilon, so a Hierarchical DBSCAN using something like an Octree should be the desired approach."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Extractor Class",
+                "desc": [
+                    {
+                        "paragraphBlock": [
+                            "The Extractor Class has been modified so that it no longer organizes the extracted color palettes. ",
+                            "The idea is for the Extractor Class to only be responsible for utilizing extraction utilities and ",
+                            "algorithms and output the raw result in a dictionary for the user to use. This is to prepare the ",
+                            "Extractor Class to be used as an importable class from the PyPalEx package, and to also act as a ",
+                            "template for the user if they wish to make their own version of the Extractor Class that utilzes the ",
+                            "provided extraction utilities and algorithms."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Additional Utility Files",
+                "desc": [
+                    {
+                        "paragraphBlock": [
+                            "There have been several utility files added in this update to manage different functions. The ",
+                            "addition of a file_utils.py module will be responsible for managing how the extracted color ",
+                            "palettes are saved in the user's computer system. The addition of a print_utils.py module will ",
+                            "be responsible for the handling printing previews of the extracted color palettes to the user's ",
+                            "terminal / CLI screen. These two modules are also possible collaboration points for open source ",
+                            "contributors, Since everyone has different OS systems and file-saving preferences."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Additional Saving and Extraction Options",
+                "desc": [
+                    {
+                        "paragraphBlock": [
+                            "Several different saving and extraction options have also been added in this update."
+                        ]
+                    },
+                    {
+                        "paragraphBlock": [
+                            "The user can now choose to extract more saturated colors via the `--sat-pref`, `--sat_pref-light`, ",
+                            "`--sat_pref-normal` and `--sat_pref-dark` options. These options allow the user to extract more ",
+                            "saturated colors from all three color palettes (light, normal, dark) or to choose a color palette ",
+                            "specifically. Although the current saturation preference for these options is hard coded to 60% saturation, ",
+                            "the next improvement for this option is to allow the user to decided the percentage they're looking for."
+                        ]
+                    },
+                    {
+                        "paragraphBlock": [
+                            "The user can also now choose how they would like to proceed after the extraction process is complete by ",
+                            "using `--save-check`, `--preview` and `--preview-check` options. The `--save-check` option allows the user ",
+                            "to decided 'yes/no' if they want to save the extracted color palette. The `--preview` option allows the ",
+                            "user to see a preview of the extracted color palette in the terminal before it is saved. And the `--preview-check` ",
+                            "option is a combination of the previous two options, where it shows a preview of the extracted color palette ",
+                            "to the user before asking them if they would like to have it saved."
                         ]
                     }
                 ]
