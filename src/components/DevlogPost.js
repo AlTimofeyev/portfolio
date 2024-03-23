@@ -10,11 +10,12 @@ function DevlogPost(prop) {
     const { devlogPostReadMoreOpened, setdevlogPostReadMoreOpened } = useContext(DevlogPostContext);
 
     const handleClosingReadMorePost = () => {
-        console.log("Handling closing devlog post")
         overlayRef.current.classList.remove('overlay-opened');
         document.body.classList.remove('suspend-body-scrolling');
 
         // Wait 0.25 seconds before setting the Read More Post to false.
+        // This is the same ammount of time for the css transition to finish
+        // when classname 'suspend-body-scrolling' is removed.
         setTimeout(() => {
             setdevlogPostReadMoreOpened(false);
         }, 250);
@@ -23,7 +24,8 @@ function DevlogPost(prop) {
     useEffect(() => {
         document.body.classList.add('suspend-body-scrolling');
 
-        // There needs to be a slight delay before this class is added, otherwise it'll activate instantly.
+        // There needs to be a slight delay before this class is added, 
+        // otherwise it'll activate instantly without css transition.
         setTimeout(() => {
             overlayRef.current.classList.add('overlay-opened');
         }, 1);
@@ -33,12 +35,6 @@ function DevlogPost(prop) {
                 handleClosingReadMorePost();
             }
         }
-
-
-        // console.log("Inside Devlog POST");
-        // console.log(currentPost.year, currentPost.month, currentPost.day);
-        // console.log("LEAVING Devlog POST");
-
 
         document.addEventListener("keydown", handleKeyPress);
 
@@ -68,16 +64,16 @@ function DevlogPost(prop) {
                                     <div className='post-publication-date'>
                                         <span className='publication-date'>{currentPost.month} {currentPost.day}, {currentPost.year}</span>
                                     </div>
-                                    {(currentPost.githubLink || currentPost.pypiLink) &&
+                                    {currentPost.links && !(Object.keys(currentPost.links).length === 0) &&
                                         <span className='spacer'> | </span>
                                     }
-                                    {(currentPost.githubLink || currentPost.pypiLink) &&
+                                    {currentPost.links && !(Object.keys(currentPost.links).length === 0) &&
                                         <div className='project-buttons-container'>
-                                            {currentPost.githubLink &&
+                                            {currentPost.links.githubLink &&
                                                 <div className='project-btn'>
                                                     <a
                                                         className='btn-link'
-                                                        href={currentPost.githubLink}
+                                                        href={currentPost.links.githubLink}
                                                         target='_blank'
                                                         rel='noopener noreferrer'
                                                     >
@@ -87,11 +83,11 @@ function DevlogPost(prop) {
                                                     </a>
                                                 </div>
                                             }
-                                            {currentPost.pypiLink &&
+                                            {currentPost.links.pypiLink &&
                                                 <div className='project-btn'>
                                                     <a
                                                         className='btn-link'
-                                                        href={currentPost.pypiLink}
+                                                        href={currentPost.links.pypiLink}
                                                         target='_blank'
                                                         rel='noopener noreferrer'
                                                     >

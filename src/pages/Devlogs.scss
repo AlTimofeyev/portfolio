@@ -1,20 +1,20 @@
 @import "../Constants.scss";
 
 .devlogs {
-    // background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 10rem;
     position: relative;
+    width: 100vw;
+    width: 100svw;
     height: fit-content;
     min-height: 100vh;
     min-height: 100svh;
     margin-bottom: 15rem;
 
     .devlogs-container {
-        // background-color: teal;
         color: $darkText_LightTheme;
         display: flex;
         align-items: center;
@@ -23,7 +23,6 @@
         width: 100%;
 
         .posts {
-            // background-color: pink;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -32,13 +31,11 @@
             width: 90%;
 
             .post {
-                // background-color: antiquewhite;
                 display: grid;
                 grid-template-areas: 'date post';
                 grid-auto-columns: 1fr 2fr;
                 margin-inline: auto;
                 gap: 2rem;
-                // width: 80%;
                 width: 70%;
                 min-width: 82rem;
 
@@ -48,34 +45,27 @@
                 }
 
                 .post-publication-date {
-                    // background-color: brown;
-                    // flex: 1;
                     grid-area: date;
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
                     flex-direction: column;
-                    // position: relative;
                     width: 100%;
                     min-width: 30rem;
                     height: 100%;
                     min-height: 30rem;
 
                     .publication-date-container {
-                        // background-color: aqua;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         flex-direction: column;
                         gap: 1rem;
-                        // position: sticky;
-                        // top: 25%;
                         width: 100%;
-                        height: 100%;
+                        height: 30rem;
                         padding: 2.5rem;
 
                         span {
-                            // background-color: teal;
                             font-size: $heading1;
                             font-weight: 800;
                         }
@@ -84,20 +74,16 @@
                 }
 
                 .post-body {
-                    // background-color: brown;
-                    // flex: 6;
                     grid-area: post;
                     display: flex;
                     align-items: flex-start;
                     justify-content: center;
                     flex-direction: column;
-                    // gap: 3rem;
                     gap: 1.5rem;
                     width: 100%;
                     height: 100%;
 
                     .post-header {
-                        // background-color: teal;
                         display: flex;
                         align-items: flex-start;
                         justify-content: flex-start;
@@ -114,7 +100,6 @@
                         .post-subject {
                             font-size: $heading3;
                             font-weight: 700;
-                            // font-style: italic;
                         }
 
                         .post-publication-date-mobile {
@@ -124,14 +109,12 @@
                     }
 
                     .post-summary {
-                        // background-color: yellow;
                         display: flex;
                         align-items: center;
                         justify-content: flex-start;
                         width: 100%;
 
                         .post-summary-container {
-                            // background-color: teal;
                             display: flex;
                             align-items: center;
                             justify-content: flex-start;
@@ -144,7 +127,6 @@
                     }
 
                     .post-buttons {
-                        // background-color: yellow;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -152,16 +134,28 @@
                         padding: 0rem 0.5rem;
 
                         .read-more-btn-container {
-                            // background-color: tan;
                             flex: 1;
                             display: flex;
                             align-items: center;
                             justify-content: flex-start;
                             height: 100%;
+
+                            .read-more {
+                                width: 10rem;
+                                height: 100%;
+                                background: none;
+                                border: none;
+                                border-radius: 25rem;
+                                outline: inherit;
+                                cursor: pointer;
+                                color: inherit;
+                                text-transform: uppercase;
+                                font-size: $heading8;
+                                font-weight: 600;
+                            }
                         }
 
                         .project-buttons-container {
-                            // background-color: blueviolet;
                             flex: 1;
                             display: flex;
                             align-items: center;
@@ -170,13 +164,8 @@
                             height: 100%;
 
                             .project-btn {
-                                // background-color: pink;
-
                                 .btn-link {
-                                    // background-color: goldenrod;
-
                                     .btn-logo-container {
-                                        // background-color: red;
                                         width: $heading4;
                                         height: $heading4;
 
@@ -189,55 +178,124 @@
                             }
                         }
                     }
-
-                    // .post-content {
-                    //     background-color: yellow;
-                    //     display: flex;
-                    //     align-items: flex-start;
-                    //     justify-content: flex-start;
-                    //     flex-direction: column;
-                    //     gap: 2rem;
-                    //     width: 100%;
-
-                    //     .content-section {
-                    //         background-color: teal;
-                    //         display: flex;
-                    //         align-items: flex-start;
-                    //         justify-content: flex-start;
-                    //         flex-direction: column;
-                    //         gap: 1rem;
-                    //         width: 100%;
-
-                    //         .section-title {
-                    //             background-color: burlywood;
-                    //             text-transform: uppercase;
-                    //             font-size: $heading6;
-                    //             font-weight: 500;
-                    //         }
-
-                    //         .section-body {
-                    //             background-color: burlywood;
-                    //             display: flex;
-                    //             align-items: flex-start;
-                    //             justify-content: flex-start;
-                    //             flex-direction: column;
-                    //             gap: 0.5rem;
-                    //             width: 100%;
-
-                    //             .paragraph-container {
-                    //                 // background-color: salmon;
-
-                    //                 .paragraph {
-                    //                     // background-color: lightblue;
-                    //                     text-indent: 2.5rem;
-                    //                 }
-                    //             }
-                    //         }
-                    //     }
-                    // }
                 }
             }
         }
     }
+}
 
+@media screen and (max-width: 925px) {
+    .devlogs {
+        .devlogs-container {
+            .posts {
+                .post {
+                    grid-template-areas: 'post';
+                    grid-auto-columns: 1fr;
+                    gap: 0rem;
+                    width: 90%;
+                    min-width: 50rem;
+
+                    &:nth-child(2n) {
+                        grid-template-areas: 'post';
+                        grid-auto-columns: 1fr;
+                    }
+
+                    .post-publication-date {
+                        display: none;
+                    }
+
+                    .post-body {
+                        .post-header {
+                            .post-publication-date-mobile {
+                                display: inline;
+                                font-size: $defaultFontSize;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .devlogs {
+        .devlogs-container {
+            .posts {
+                .post {
+                    width: 100%;
+                    min-width: 0;
+
+                    .post-body {
+                        .post-header {
+                            .post-project {
+                                font-size: $heading6;
+                            }
+    
+                            .post-subject {
+                                font-size: $heading4;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .devlogs {
+        .devlogs-container {
+            .posts {
+                .post {
+                    .post-body {
+                        .post-header {
+                            .post-project {
+                                font-size: $heading6;
+                            }
+    
+                            .post-subject {
+                                font-size: $heading5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .devlogs {
+        .devlogs-container {
+            .posts {
+                gap: 6rem;
+                
+                .post {
+                    .post-body {
+
+                        .post-buttons {
+                            flex-direction: column;
+                            gap: 2rem;
+                            width: 100%;
+    
+                            .read-more-btn-container {
+                                width: 100%;
+    
+                                .read-more {
+                                    width: 100%;
+                                    height: 2.5rem;
+                                }
+                            }
+    
+                            .project-buttons-container {
+                                justify-content: center;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

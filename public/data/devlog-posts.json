@@ -2,10 +2,12 @@
     {
         "year": "2024",
         "month": "March",
-        "day": "18",
+        "day": "22",
         "project": "Portfolio Website",
         "subject": "Transition to Portfolio v2.0",
-        "githubLink": "https://github.com/AlTimofeyev/portfolio",
+        "links": {
+            "githubLink": "https://github.com/AlTimofeyev/portfolio"
+        },
         "summary": [
             "The transition to portfolio V2.0 includes some new layouts, a unified color scheme, ",
             "additional development progress and contact pages, and better navigation. ",
@@ -47,8 +49,10 @@
         "day": "7",
         "project": "Python Palette Extractor (PyPalEx)",
         "subject": "Published v1.3.3 of PyPalEx",
-        "githubLink": "https://github.com/AlTimofeyev/pypalex",
-        "pypiLink": "https://pypi.org/project/pypalex/",
+        "links": {
+            "githubLink": "https://github.com/AlTimofeyev/pypalex",
+            "pypiLink": "https://pypi.org/project/pypalex/"
+        },
         "summary": [
             "This log contains updates to the saving options, extraction options, the Extractor ",
             "class, as well as the extraction process itself. Since this is the first post for ",
@@ -86,8 +90,8 @@
                             "concepts from K-Means, like using the average of a cluster of colors as a result for each extracted color. ",
                             "This approach does have some downsides though, becuase it doesn't account for the noise in color data ",
                             "where some outlying colors in a cluster may skew the average of that cluster and result in an ",
-                            "inadequate color being extracted. The next approach to this problem will borrow concepts to DBSACN, which ",
-                            "accounts for haveing noise in the data clusters. The DBSCAN algorithm does have a tricky variable to deal with, ",
+                            "inadequate color being extracted. The next approach to this problem will borrow concepts to DBSCAN, which ",
+                            "accounts for having noise in the data clusters. The DBSCAN algorithm does have a tricky variable to deal with, ",
                             "called epsilon, so a Hierarchical DBSCAN using something like an Octree should be the desired approach."
                         ]
                     }

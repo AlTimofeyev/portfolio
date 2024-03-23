@@ -83,7 +83,7 @@ function Devlogs() {
                                         <p className='summary'>{post.summary}</p>
                                     </div>
                                 </div>
-                                {(post.content || post.githubLink || post.pypiLink) &&
+                                {(post.content || post.links) &&
                                     <div className='post-buttons'>
                                         {post.content &&
                                             <div className='read-more-btn-container'>
@@ -92,13 +92,13 @@ function Devlogs() {
                                                 </button>
                                             </div>
                                         }
-                                        {(post.githubLink || post.pypiLink) &&
+                                        {post.links && !(Object.keys(post.links).length === 0) &&
                                             <div className='project-buttons-container'>
-                                                {post.githubLink &&
+                                                {post.links.githubLink &&
                                                     <div className='project-btn'>
                                                         <a
                                                             className='btn-link'
-                                                            href={post.githubLink}
+                                                            href={post.links.githubLink}
                                                             target='_blank'
                                                             rel='noopener noreferrer'
                                                         >
@@ -108,11 +108,11 @@ function Devlogs() {
                                                         </a>
                                                     </div>
                                                 }
-                                                {post.pypiLink &&
+                                                {post.links.pypiLink &&
                                                     <div className='project-btn'>
                                                         <a
                                                             className='btn-link'
-                                                            href={post.pypiLink}
+                                                            href={post.links.pypiLink}
                                                             target='_blank'
                                                             rel='noopener noreferrer'
                                                         >
@@ -139,48 +139,3 @@ function Devlogs() {
 }
 
 export default Devlogs
-
-
-
-{/* < div className = 'devlogs-container' >
-    <div className='posts'>
-        {posts.map((post, index) => (
-            <div className='post' key={index}>
-                <div className='post-publication-date'>
-                    <div className='publication-date-container'>
-                        <span className='day'>{post.day}</span>
-                        <span className='month'>{post.month}</span>
-                        <span className='year'>{post.year}</span>
-                    </div>
-                </div>
-                <div className='post-body'>
-                    <div className='post-header'>
-                        <h2 className='post-project'>{post.project}</h2>
-                        <h1 className='post-subject'>{post.subject}</h1>
-                        <div className='post-publication-date-mobile'>
-                            <span className='publication-date'>{post.month} {post.day}, {post.year}</span>
-                        </div>
-                    </div>
-                    {post.content &&
-                        <div className='post-content'>
-                            {post.content.map((section, index) => (
-                                <div className='content-section' key={index}>
-                                    {section.title &&
-                                        <h4 className='section-title'>{section.title}</h4>
-                                    }
-                                    <div className='section-body'>
-                                        {section.desc.map((paragraph, index) => (
-                                            <div className='paragraph-container' key={index}>
-                                                <p className='paragraph'>{paragraph.paragraphBlock}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    }
-                </div>
-            </div>
-        ))}
-    </div>
-</div> */}

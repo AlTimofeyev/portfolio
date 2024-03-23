@@ -6,6 +6,8 @@
     justify-content: center;
     flex-direction: column;
     gap: 10rem;
+    width: 100vw;
+    width: 100svw;
     height: fit-content;
     min-height: 100vh;
     min-height: 100svh;
@@ -395,10 +397,6 @@
     }
 }
 
-
-
-
-
 @media screen and (max-width: 1115px) {
     .projects {
         .projects-container {
@@ -424,13 +422,6 @@
         }
     }
 }
-
-
-
-
-
-
-
 
 @media screen and (max-width: 880px) {
     .projects {
