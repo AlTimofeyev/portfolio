@@ -34,6 +34,7 @@
                 display: grid;
                 grid-template-areas: 'date post';
                 grid-auto-columns: 1fr 2fr;
+                grid-auto-rows: 1fr;    // This prevents the rows from overlapping in Safari.
                 margin-inline: auto;
                 gap: 2rem;
                 width: 70%;
