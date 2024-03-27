@@ -1,12 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavbarPageSelectionContext } from '../contexts/NavbarContext';
+import { ColorSchemeContext } from '../contexts/ColorSchemeContext';
 import './Navbar.scss';
 
 
 function Navbar() {
     const [mobileMenuOpen, setMobileMenu] = useState(false);
     const { pageSelected, setPageSelectionState } = useContext(NavbarPageSelectionContext);
+    const { lightSchemeSelected, setLightScheme } = useContext(ColorSchemeContext);
 
     const handleMenuIconClick = () => setMobileMenu(!mobileMenuOpen);
     const closeMobileMenu = () => setMobileMenu(false);
@@ -15,6 +17,12 @@ function Navbar() {
     //     setMobileMenu(false);
     //     setPageSelectionState(index);
     // };
+
+    // THis Use Effect is for testing:
+    useEffect(() => {
+        console.log("Selected Color Scheme: true == light , false == dark");
+        console.log(lightSchemeSelected);
+    }, [lightSchemeSelected]);
 
     return (
         <div className='navbar'>
