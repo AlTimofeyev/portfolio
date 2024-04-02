@@ -1,20 +1,37 @@
 @import "../Constants.scss";
 
 .card-item {
-    background-color: $primary_LightTheme;
+    background-color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    position: relative;
+    // overflow: hidden;
     width: 100%;
     height: 100%;
     border-radius: 1rem;
 
     // neutralNormalGold = rgba(128, 125, 117)
-    box-shadow: 0 6px 20px rgba(128, 125, 117, 0.17);
-    -webkit-filter: drop-shadow(0 6px 20px rgba(128, 125, 117, 0.17));
-    filter: drop-shadow(0 6px 20px rgba(128, 125, 117, 0.17));
-    transition: background-color 0.25s ease-in-out, 0.2s transform ease-in-out, box-shadow 0.25s ease-in-out, filter 0.25s ease-in-out;
+    // box-shadow: 0 6px 20px rgba(128, 125, 117, 0.17);
+    // -webkit-filter: drop-shadow(0 6px 20px rgba(128, 125, 117, 0.17));
+    // filter: drop-shadow(0 6px 20px rgba(128, 125, 117, 0.17));
+
+    transition: background-color 0.25s ease-in-out, 0.2s transform ease-in-out;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        opacity: 0.2;
+        box-shadow: 0 6px 20px var(--primary);
+        -webkit-filter: drop-shadow(0 6px 20px var(--primary));
+        filter: drop-shadow(0 6px 20px var(--primary));
+
+        transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, filter 0.25s ease-in-out;
+    }
 
     .card-item-container {
         display: flex;
@@ -22,6 +39,8 @@
         justify-content: center;
         width: 100%;
         height: 100%;
+        overflow: hidden;
+        border-radius: inherit;
 
         .card-link {
             display: flex;
@@ -34,6 +53,8 @@
             text-decoration: none;
             color: inherit;
 
+            transition: color 0.25s ease-in-out;
+
             .image-container {
                 background-color: white;
                 display: flex;
@@ -42,7 +63,7 @@
                 overflow: hidden;
                 position: relative;
                 width: 100%;
-                height: 80%;
+                height: 100%;
                 object-fit: contain;
 
                 .project-sample {
@@ -62,15 +83,17 @@
                     padding: 6px 8px;
                     border-radius: 10px 10px 0 0;
                     box-sizing: border-box;
-                    color: $lightText_LightTheme;
-                    background-color: $accent2_LightTheme;
+                    color: var(--inverse-foreground);
+                    background-color: var(--accent);
                     font-size: $heading7;
                     font-weight: 500;
+
+                    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
                 }
 
-                &:hover>.project-sample {
-                    transform: scale(1.1);
-                }
+                // &:hover>.project-sample {
+                //     transform: scale(1.1);
+                // }
             }
 
             .title-container {
@@ -92,13 +115,20 @@
     }
 
     &:hover {
-        background-color: $secondary_LightTheme;
+        background-color: var(--secondary);
 
         // primary = rgba(253, 224, 108)
-        box-shadow: 0 6px 20px rgba(253, 224, 108, 0.5);
-        -webkit-filter: drop-shadow(0 6px 20px rgba(253, 224, 108, 0.2));
-        filter: drop-shadow(0 6px 20px rgba(253, 224, 108, 0.2));
+        // box-shadow: 0 6px 20px rgba(253, 224, 108, 0.5);
+        // -webkit-filter: drop-shadow(0 6px 20px rgba(253, 224, 108, 0.2));
+        // filter: drop-shadow(0 6px 20px rgba(253, 224, 108, 0.2));
         transform: scale(1.025);
+
+        &::after {
+            opacity: 0.9;
+            box-shadow: 0 6px 20px var(--secondary);
+            -webkit-filter: drop-shadow(0 6px 20px var(--secondary));
+            filter: drop-shadow(0 6px 20px var(--secondary));
+        }
     }
 
     &:active {

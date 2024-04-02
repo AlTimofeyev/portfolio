@@ -15,7 +15,7 @@
     margin-bottom: 15rem;
 
     .devlogs-container {
-        color: $darkText_LightTheme;
+        color: var(--foreground);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -69,6 +69,8 @@
                         span {
                             font-size: $heading1;
                             font-weight: 800;
+
+                            transition: color 0.25s ease-in-out;
                         }
 
                     }
@@ -92,20 +94,24 @@
                         width: 100%;
 
                         .post-project {
-                            color: $neutralText_LightTheme;
+                            color: var(--neutral);
                             font-size: $heading5;
                             font-weight: 500;
                             font-style: italic;
+
+                            transition: color 0.25s ease-in-out;
                         }
 
                         .post-subject {
                             font-size: $heading3;
                             font-weight: 700;
+                            transition: color 0.25s ease-in-out;
                         }
 
                         .post-publication-date-mobile {
                             display: none;
                             font-size: $defaultFontSize;
+                            transition: color 0.25s ease-in-out;
                         }
                     }
 
@@ -123,6 +129,7 @@
 
                             .summary {
                                 text-indent: 2.5rem;
+                                transition: color 0.25s ease-in-out;
                             }
                         }
                     }
@@ -153,6 +160,17 @@
                                 text-transform: uppercase;
                                 font-size: $heading8;
                                 font-weight: 600;
+
+                                transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, transform 0.2s ease-in-out;
+
+                                &:hover {
+                                    background-color: var(--accent);
+                                    color: var(--inverse-foreground);
+                                }
+
+                                &:active {
+                                    transform: scale(0.9);
+                                }
                             }
                         }
 
@@ -165,6 +183,11 @@
                             height: 100%;
 
                             .project-btn {
+                                border-radius: 50%;
+                                overflow: hidden;
+
+                                transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+
                                 .btn-link {
                                     .btn-logo-container {
                                         width: $heading4;
@@ -173,8 +196,30 @@
                                         .btn-logo {
                                             width: 100%;
                                             height: auto;
+                                            fill: var(--foreground);
+
+                                            transition: fill 0.25s ease-in-out;
                                         }
                                     }
+                                }
+
+                                &:hover {
+                                    background-color: var(--accent);
+                                    box-shadow: 0 0 10px var(--accent);
+
+                                    transform: scale(1.1);
+
+                                    .btn-link {
+                                        .btn-logo-container {
+                                            .btn-logo {
+                                                fill: var(--background);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &:active {
+                                    transform: scale(0.9);
                                 }
                             }
                         }

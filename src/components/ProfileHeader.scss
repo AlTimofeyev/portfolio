@@ -1,8 +1,8 @@
 @import "../Constants.scss";
 
 .profile {
-    background-color: $lightBackground_LightTheme;
-    color: $darkText_LightTheme;
+    background-color: var(--background);
+    color: var(--foreground);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +11,8 @@
     height: 1px; // So that child elements inherit the height, fit-content doesn't do that.
     min-height: 90vh; // Fallback if the following min-height isn't available.
     min-height: 90svh; // Overwrite the previous min-height for small viewports like mobile, if it's availalble.
+
+    transition: background-color 0.25s ease-in-out;
 
     .profile-container {
         display: flex;
@@ -45,6 +47,8 @@
                         font-size: $pageTitle1;
                         letter-spacing: 1rem;
                         word-spacing: 4rem;
+
+                        transition: color 0.25s ease-in-out;
                     }
                 }
             }
@@ -70,6 +74,8 @@
                         word-spacing: 2rem;
                         cursor: default;
                         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); // https://bennettfeely.com/clippy/
+
+                        transition: color 0.25s ease-in-out;
                     }
                 }
             }
@@ -108,13 +114,13 @@
                     font-size: $heading6;
                     font-weight: 400;
                     cursor: pointer;
-                    transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out, transform 0.2s ease-in-out;
+                    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out, border 0.25s ease-in-out, transform 0.2s ease-in-out;
                 }
 
                 .primary-btn,
                 .highlighted-btn {
                     &:hover {
-                        transform: scale(1.025);
+                        transform: scale(1.05);
                     }
 
                     &:active {
@@ -123,22 +129,24 @@
                 }
 
                 .primary-btn {
-                    color: $darkText_LightTheme;
-                    background-color: $accent1_LightTheme;
+                    color: var(--inverse-foreground);
+                    background-color: var(--accent);
 
                     &:hover {
-                        background-color: $primary_LightTheme;
-                        box-shadow: 0px 0px 10px $accent1_LightTheme;
+                        background-color: var(--accent-support2);
+                        box-shadow: 0px 0px 10px var(--accent-support2);
                     }
                 }
 
                 .highlighted-btn {
-                    color: $lightText_LightTheme;
-                    background-color: $accent2_LightTheme;
+                    color: var(--foreground);
+                    background-color: var(--background);
+                    border: 1px solid var(--accent);
 
                     &:hover {
-                        background-color: $primary_DarkTheme;
-                        box-shadow: 0px 0px 10px $accent1_DarkTheme;
+                        color: var(--inverse-foreground);
+                        background-color: var(--accent-support2);
+                        box-shadow: 0px 0px 10px var(--accent-support2);
                     }
                 }
             }

@@ -13,7 +13,7 @@
     min-height: 100svh; // Overwrite the previous min-height for small viewports like mobile, if it's availalble.
 
     .home-container {
-        color: $darkText_LightTheme;
+        color: var(--foreground);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -47,9 +47,10 @@
                         height: $heading5;
 
                         .section-icon {
-                            fill: $darkText_LightTheme;
+                            fill: var(--foreground);
                             width: 100%;
                             height: auto;
+                            transition: fill 0.25s ease-in-out;
                         }
                     }
 
@@ -62,6 +63,7 @@
                             text-transform: uppercase;
                             font-weight: 700;
                             font-size: $heading6;
+                            transition: color 0.25s ease-in-out;
                         }
                     }
                 }
@@ -84,7 +86,7 @@
                         height: 100%;
 
                         .introduction {
-                            background-color: $primary_LightTheme;
+                            background-color: var(--primary);
                             flex: 3;
                             display: flex;
                             align-items: center;
@@ -94,6 +96,8 @@
                             height: 35rem;
                             padding: 1rem;
                             border-radius: 15px;
+
+                            transition: background-color 0.25s ease-in-out;
 
                             .introduction-container {
                                 display: flex;
@@ -115,8 +119,10 @@
                                         justify-content: center;
                                         width: 25rem;
                                         height: 25rem;
-                                        box-shadow: 0px 2px 0px 0px $darkText_LightTheme;
+                                        box-shadow: 0px 2px 0px 0px var(--foreground);
                                         border-radius: 50%;
+
+                                        transition: box-shadow 0.25s ease-in-out;
 
                                         .pfp {
                                             width: 92%;
@@ -160,15 +166,17 @@
                                                 height: $heading2;
 
                                                 .waving-icon {
-                                                    fill: $darkText_LightTheme;
+                                                    fill: var(--foreground);
                                                     width: 100%;
                                                     height: auto;
+                                                    transition: fill 0.25s ease-in-out;
                                                 }
                                             }
 
                                             .snippet-text {
                                                 font-size: $defaultFontSize;
                                                 font-weight: 300;
+                                                transition: color 0.25s ease-in-out;
                                             }
                                         }
 
@@ -193,33 +201,35 @@
                                                     height: $heading1;
                                                     padding: 0.5rem;
                                                     border-radius: 50%;
-                                                    box-shadow: 0 0 2px $accent2_LightTheme;
-                                                    transition: 0.3s ease;
+                                                    box-shadow: 0 0 2px var(--accent);
                                                     cursor: pointer;
 
+                                                    transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+                                                    
                                                     .about-me-icon-link {
                                                         display: flex;
                                                         align-items: center;
                                                         justify-content: center;
-                                                        transition: 0.3s ease;
+
+                                                        transition: transform 0.25s ease-in-out;
 
                                                         .about-me-icon {
-                                                            fill: $darkText_LightTheme;
+                                                            fill: var(--foreground);
                                                             width: 100%;
                                                             height: auto;
-                                                            transition: 0.3s ease;
+                                                            transition: fill 0.25s ease-in-out;
                                                         }
                                                     }
 
                                                     &:hover {
-                                                        background-color: $accent1_LightTheme;
-                                                        box-shadow: 0 0 10px $accent2_LightTheme;
+                                                        background-color: var(--accent);
+                                                        box-shadow: 0 0 10px var(--accent);
 
                                                         .about-me-icon-link {
                                                             transform: scale(1.3);
 
                                                             .about-me-icon {
-                                                                fill: $accent2_LightTheme;
+                                                                fill: var(--background);
                                                             }
                                                         }
                                                     }
@@ -257,8 +267,10 @@
                                     width: 100%;
                                     height: 100%;
                                     border-radius: 30px;
-                                    border: 1px solid $accent1_LightTheme;
+                                    border: 1px solid var(--secondary);
                                     cursor: default;
+
+                                    transition: border 0.25s ease-in-out;
 
                                     .interest-icon {
                                         display: flex;
@@ -275,15 +287,17 @@
                                             height: $pageTitle2;
 
                                             .icon {
-                                                fill: $darkText_LightTheme;
+                                                fill: var(--foreground);
                                                 width: 100%;
                                                 height: auto;
+                                                transition: fill 0.25s ease-in-out;
                                             }
                                         }
                                     }
 
                                     .interest-short {
-                                        display: none
+                                        display: none;
+                                        transition: color 0.25s ease-in-out;
                                     }
 
                                     .interest-long {
@@ -296,19 +310,20 @@
                                         height: 100%;
                                         width: 100%;
                                         padding: 1rem;
-                                        background-color: $darkBackground_LightTheme;
-                                        color: $lightText_LightTheme;
+                                        background-color: var(--primary);
+                                        color: var(--foreground);
                                         clip-path: circle(0rem at 50% 50%);
                                         -webkit-clip-path: circle(0rem at 50% 50%);
-                                        transition: 0.4s ease-in-out;
+
+                                        transition: clip-path 0.4s ease-in-out;
 
                                         .interest-title {
                                             text-transform: uppercase;
-                                            color: $accent1_LightTheme;
+                                            color: var(--accent);
                                             font-size: $heading4;
                                             font-weight: 700;
                                             opacity: 0;
-                                            transition: 0.5s ease-in-out;
+                                            transition: opacity 0.5s ease-in-out;
                                         }
 
                                         .interest-list {
@@ -320,20 +335,22 @@
                                             font-size: $heading7;
                                             font-weight: 600;
                                             opacity: 0;
-                                            transition: 0.5s ease-in-out;
+                                            transition: opacity 0.5s ease-in-out;
                                         }
                                     }
 
-                                    &:hover>.interest-long {
-                                        clip-path: circle(65%);
-                                        -webkit-clip-path: circle(65%);
+                                    &:hover {
+                                        .interest-long {
+                                            clip-path: circle(65%);
+                                            -webkit-clip-path: circle(65%);
 
-                                        .interest-title {
-                                            opacity: 1;
-                                        }
+                                            .interest-title {
+                                                opacity: 1;
+                                            }
 
-                                        .interest-list {
-                                            opacity: 1;
+                                            .interest-list {
+                                                opacity: 1;
+                                            }
                                         }
                                     }
                                 }
@@ -355,7 +372,7 @@
                                 gap: 20px;
 
                                 .fact-card {
-                                    background-color: $secondary_LightTheme;
+                                    background-color: var(--secondary);
                                     flex-grow: 1;
                                     display: flex;
                                     align-items: center;
@@ -365,6 +382,8 @@
                                     width: 33.25rem;
                                     height: 20rem;
                                     border-radius: 15px;
+
+                                    transition: background-color 0.25s ease-in-out;
 
                                     .visible-fact,
                                     .reveal-fact {
@@ -382,6 +401,7 @@
                                             .fact {
                                                 font-size: $heading6;
                                                 font-weight: 400;
+                                                transition: color 0.25s ease-in-out;
 
                                                 .fact-list {
                                                     display: flex;
@@ -411,32 +431,35 @@
 
                                     .reveal-fact {
                                         position: relative;
-                                        background-color: $accent2_LightTheme;
-                                        color: $lightText_LightTheme;
+                                        background-color: var(--accent);
+                                        color: var(--foreground);
                                         clip-path: circle(1.65rem at calc(100% - 1.20em) 1.15em);
                                         -webkit-clip-path: circle(1.65rem at calc(100% - 1.20em) 1.15em);
-                                        transition: 0.4s ease-in-out;
+                                        
+                                        transition: background-color 0.4s ease-in-out, clip-path 0.4s ease-in-out;
 
                                         .fact {
                                             opacity: 0;
-                                            transition: opacity 0.5s ease-in-out;
+                                            transition: opacity 0.4s ease-in-out;
                                         }
 
                                         .reveal-fact-icon {
                                             position: absolute;
                                             top: 0.40em;
                                             right: 0.925em;
-                                            color: $accent1_LightTheme;
+                                            color: var(--primary);
                                             font-size: $heading6;
                                             font-weight: 700;
                                             pointer-events: none;
-                                            transition: opacity 0.5s;
+
+                                            transition: opacity 0.4s ease-in-out;
                                         }
 
                                         &:hover {
-                                            background-color: $darkBackground_LightTheme;
+                                            background-color: var(--primary);
                                             cursor: pointer;
                                             clip-path: circle(100%);
+                                            -webkit-clip-path: circle(100%);
 
                                             .fact {
                                                 opacity: 1;
@@ -452,7 +475,7 @@
                         }
 
                         .subsection {
-                            background-color: $secondary_LightTheme;
+                            background-color: var(--secondary);
                             flex: 1;
                             display: flex;
                             align-items: center;
@@ -460,6 +483,7 @@
                             overflow: hidden;
                             padding: 2rem;
                             border-radius: 2rem;
+                            transition: background-color 0.25s ease-in-out;
 
                             .subsection-container {
                                 flex: 1;
@@ -479,6 +503,7 @@
                                         text-align: center;
                                         font-size: $heading4;
                                         font-weight: 600;
+                                        transition: color 0.25s ease-in-out;
                                     }
                                 }
 
@@ -493,16 +518,17 @@
 
                                     .skill {
                                         padding: 0.5rem 2rem;
-                                        border: 1px solid $accent2_LightTheme;
+                                        border: 1px solid var(--accent);
                                         border-radius: 30px;
                                         font-size: $heading7;
                                         font-weight: 500;
-                                        transition: 0.2s ease-in-out;
+                                        transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border 0.25s ease-in-out;
                                     }
 
                                     .active {
-                                        border: 1px solid $accent1_LightTheme;
-                                        background-color: $accent1_LightTheme;
+                                        border: 1px solid var(--primary);
+                                        background-color: var(--primary);
+                                        // color: var(--inverse-foreground);
                                     }
                                 }
                             }
@@ -543,6 +569,7 @@
                                     .title {
                                         font-size: $heading4;
                                         font-weight: 600;
+                                        transition: color 0.25s ease-in-out;
                                     }
                                 }
 
@@ -555,8 +582,10 @@
                                     overflow: hidden;
                                     width: 100%;
                                     height: 100%;
-                                    border: 1px solid $accent1_LightTheme;
+                                    border: 1px solid var(--accent);
                                     border-radius: 20px;
+
+                                    transition: border 0.25s ease-in-out;
 
                                     .menu-item-group {
                                         display: flex;
@@ -578,9 +607,11 @@
                                             height: 100%;
 
                                             .proficiency-icon {
-                                                fill: $darkText_LightTheme;
+                                                fill: var(--inverse-foreground);
                                                 width: 100%;
                                                 height: 100%;
+
+                                                transition: fill 0.25s ease-in-out;
                                             }
                                         }
 
@@ -595,13 +626,13 @@
                                                 padding: 0.25rem 1rem;
                                                 font-size: $heading6;
                                                 font-weight: 600;
-                                                transition: 0.3s all;
+                                                transition: color 0.25s ease-in-out;
                                             }
                                         }
 
                                         &::after {
                                             content: '';
-                                            background-color: $accent1_LightTheme;
+                                            background-color: var(--accent);
                                             position: absolute;
                                             left: 0;
                                             z-index: -1;
@@ -609,10 +640,13 @@
                                             height: 60%;
                                             border-radius: 0 2.5rem 2.5rem 0;
                                             transform: translateX(-100%);
-                                            transition: 0.25s all ease-in-out;
+
+                                            transition: transform 0.25s ease-in-out, background-color 0.25s ease-in-out;
                                         }
 
                                         &:hover {
+                                            color: var(--inverse-foreground);
+                                            
                                             &::after {
                                                 transform: translateX(0%);
                                             }
@@ -620,9 +654,11 @@
                                     }
 
                                     .active {
+                                        color: var(--inverse-foreground);
+
                                         &:hover {
                                             .level {
-                                                color: $secondary_LightTheme;
+                                                color: var(--secondary);
                                             }
                                         }
 
@@ -633,11 +669,13 @@
 
                                     &::after {
                                         content: "";
-                                        background-color: $accent1_LightTheme;
+                                        background-color: var(--accent);
                                         position: absolute;
                                         left: 0;
                                         width: 15%;
                                         height: 100%;
+
+                                        transition: background-color 0.25s ease-in-out;
                                     }
                                 }
                             }
@@ -670,6 +708,8 @@
                         height: 50%;
                         text-decoration: none;
                         color: inherit;
+
+                        transition: color 0.25s ease-in-out;
 
                         .redirect-title {
                             text-transform: uppercase;

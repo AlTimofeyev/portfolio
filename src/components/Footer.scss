@@ -1,7 +1,7 @@
 @import "../Constants.scss";
 
 .footer {
-    background-color: $darkBackground_LightTheme;
+    background-color: var(--inverse-background);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,6 +9,8 @@
     width: 100%;
     height: 80px;
     padding: 10px;
+
+    transition: background-color 0.25s ease-in-out;
 
     .footer-container {
         display: flex;
@@ -25,9 +27,11 @@
 
             .website-rights {
                 text-align: center;
-                color: $lightText_LightTheme;
+                color: var(--inverse-foreground);
                 font-size: $heading6;
                 font-weight: 500;
+
+                transition: color 0.25s ease-in-out;
             }
         }
 
@@ -54,11 +58,17 @@
                         width: $heading4;
                         height: $heading4;
                         overflow: hidden;
+                        border-radius: 25rem;
+                        background-color: var(--accent);
+
+                        transition: background-color 0.25s ease-in-out;
 
                         .social-icon {
                             width: 100%;
                             height: auto;
-                            fill: $lightText_LightTheme;
+                            fill: var(--inverse-foreground);
+
+                            transition: fill 0.25s ease-in-out;
                         }
                     }
                 }

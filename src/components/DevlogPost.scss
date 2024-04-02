@@ -11,6 +11,7 @@
     width: 100svw;
     height: 100vh;
     height: 100svh;
+    height: 100dvh;
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
@@ -19,12 +20,14 @@
 
     &::after {
         content: "";
-        background-color: black;
+        background-color: var(--neutral);
         position: absolute;
         z-index: -1;
         width: 100%;
         height: 100%;
         opacity: 0.5;
+
+        transition: background-color 0.25s ease-in-out;
     }
 
     .devlog-post {
@@ -36,7 +39,7 @@
         overflow: scroll;
 
         .devlog-post-container {
-            background-color: $lightBackground_LightTheme;
+            background-color: var(--background);
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -47,6 +50,8 @@
             min-height: 50rem;
             border-radius: 2.5rem;
             overflow: hidden;
+
+            transition: background-color 0.25s ease-in-out;
 
             .close-button {
                 display: flex;
@@ -67,30 +72,30 @@
                         width: 100%;
                         height: 100%;
                         background: none;
-                        color: inherit;
+                        color: var(--foreground);
                         border: none;
                         outline: inherit;
                         cursor: pointer;
                         font: inherit;
                         font-size: $heading4;
 
-                        transition: font-size 0.2s ease-in-out;
+                        transition: color 0.25s ease-in-out, font-size 0.2s ease-in-out;
 
                         &::after {
                             content: "";
-                            background-color: black;
+                            background-color: var(--neutral);
                             position: absolute;
                             top: 0;
                             left: 0;
                             z-index: 1;
                             width: 100%;
                             height: 100%;
-                            opacity: 0.25;
+                            opacity: 0.1;
 
                             clip-path: circle(2rem at 50% 50%);
                             -webkit-clip-path: circle(2rem at 50% 50%);
 
-                            transition: clip-path 0.3s ease-in-out, opacity 0.2s ease-in-out;
+                            transition: background-color 0.25s ease-in-out, clip-path 0.3s ease-in-out, opacity 0.2s ease-in-out;
                         }
 
                         .close-icon {
@@ -107,6 +112,7 @@
                             font-size: $heading3;
 
                             &::after {
+                                opacity: 0.25;
                                 clip-path: circle(100%);
                                 -webkit-clip-path: circle(100%);
                             }
@@ -158,12 +164,17 @@
                         justify-content: flex-start;
                         flex-direction: column;
                         width: 100%;
+                        color: var(--foreground);
+
+                        transition: color 0.25s ease-in-out;
 
                         .post-project {
-                            color: $neutralText_LightTheme;
+                            color: var(--neutral);
                             font-size: $heading4;
                             font-weight: 500;
                             font-style: italic;
+
+                            transition: color 0.25s ease-in-out;
                         }
 
                         .post-subject {
@@ -188,6 +199,11 @@
                                 gap: 1rem;
 
                                 .project-btn {
+                                    border-radius: 50%;
+                                    overflow: hidden;
+
+                                    transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+
                                     .btn-link {
                                         .btn-logo-container {
                                             width: $heading5;
@@ -196,8 +212,30 @@
                                             .btn-logo {
                                                 width: 100%;
                                                 height: auto;
+                                                fill: var(--foreground);
+
+                                                transition: fill 0.25s ease-in-out;
                                             }
                                         }
+                                    }
+
+                                    &:hover {
+                                        background-color: var(--accent);
+                                        box-shadow: 0 0 10px var(--accent);
+    
+                                        transform: scale(1.1);
+    
+                                        .btn-link {
+                                            .btn-logo-container {
+                                                .btn-logo {
+                                                    fill: var(--background);
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &:active {
+                                        transform: scale(0.9);
                                     }
                                 }
                             }
@@ -211,6 +249,9 @@
                         flex-direction: column;
                         gap: 3rem;
                         width: 100%;
+                        color: var(--foreground);
+
+                        transition: color 0.25s ease-in-out;
 
                         .content-section {
                             display: flex;
@@ -396,7 +437,7 @@
                                 gap: 0.5rem;
                                 width: 100%;
                                 margin-top: 0.5rem;
-    
+
                                 .spacer {
                                     display: none;
                                 }

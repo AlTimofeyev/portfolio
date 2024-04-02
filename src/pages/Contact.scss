@@ -14,7 +14,7 @@
     margin-bottom: 15rem;
 
     .contact-container {
-        color: $darkText_LightTheme;
+        color: var(--foreground);
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -23,6 +23,8 @@
         height: fit-content;
         // min-height: 120vh;
         // min-height: 120svh;
+
+        transition: color 0.25s ease-in-out;
 
         .contact-section {
             flex: 1;
@@ -80,7 +82,7 @@
                 height: 60rem;
 
                 .form-container {
-                    background-color: $secondary_LightTheme;
+                    background-color: var(--secondary);
                     display: flex;
                     align-items: flex-start;
                     justify-content: center;
@@ -91,6 +93,8 @@
                     min-width: 45rem;
                     padding: 2rem;
                     border-radius: 25px;
+
+                    transition: background-color 0.25s ease-in-out;
 
                     .form-content {
                         flex: 14;
@@ -112,15 +116,17 @@
                                 width: 100%;
                                 height: 100%;
                                 padding: 0rem 2rem;
-                                border: 1px solid $secondary_LightTheme;
-                                outline: 1px solid $secondary_LightTheme;
+                                border: 1px solid var(--secondary);
+                                outline: 1px solid var(--secondary);
                                 border-radius: 25px;
                                 font-family: 'Inter', sans-serif;
                                 color: inherit;
 
+                                transition: border 0.25s ease-in-out, outline 0.25s ease-in-out;
+
                                 &:focus {
-                                    border: 1px solid $accent2_LightTheme;
-                                    outline: 1px solid $accent2_LightTheme;
+                                    border: 1px solid var(--accent);
+                                    outline: 1px solid var(--accent);
                                 }
                             }
                         }
@@ -136,16 +142,18 @@
                                 width: 100%;
                                 height: 100%;
                                 padding: 2rem 2rem;
-                                border: 1px solid $secondary_LightTheme;
-                                outline: 1px solid $secondary_LightTheme;
+                                border: 1px solid var(--secondary);
+                                outline: 1px solid var(--secondary);
                                 border-radius: 25px;
                                 resize: none;
                                 font-family: 'Inter', sans-serif;
                                 color: inherit;
 
+                                transition: border 0.25s ease-in-out, outline 0.25s ease-in-out;
+
                                 &:focus {
-                                    border: 1px solid $accent2_LightTheme;
-                                    outline: 1px solid $accent2_LightTheme;
+                                    border: 1px solid var(--accent);
+                                    outline: 1px solid var(--accent);
                                 }
                             }
                         }
@@ -174,13 +182,13 @@
                                 font-family: 'Inter', sans-serif;
                                 font-size: $heading7;
                                 font-weight: 500;
-                                color: inherit;
-                                background-color: $accent1_LightTheme;
+                                color: var(--inverse-foreground);
+                                background-color: var(--accent);
                                 cursor: pointer;
-                                transition: background-color 0.25s ease-in-out, transform 0.2s ease-in-out;
+                                transition: color 2s ease-in-out, 0.25s ease-in-out, transform 0.2s ease-in-out;
 
                                 &:hover {
-                                    background-color: $primary_LightTheme;
+                                    background-color: var(--accent-support2);
                                     transform: scale(1.025);
                                 }
 
@@ -205,12 +213,12 @@
 
                                 .success-alert {
                                     text-align: center;
-                                    color: $success_LightTheme;
+                                    color: var(--success);
                                 }
 
                                 .failure-alert {
                                     text-align: center;
-                                    color: $failure_LightTheme;
+                                    color: var(--failure);
                                 }
                             }
 

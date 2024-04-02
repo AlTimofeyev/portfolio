@@ -47,7 +47,8 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2);
+                box-shadow: inset 0 0 0 2000px var(--neutral);
+                opacity: 0.25;
             }
         }
 
@@ -79,13 +80,15 @@
                 }
 
                 .heading {
-                    color: $lightText_LightTheme;
+                    color: var(--inverse-foreground);
                     text-transform: uppercase;
                     text-align: center;
                     // text-shadow: 0.5rem 0rem $accent1_LightTheme;
-                    text-shadow: 0.5rem 0rem $accent2_LightTheme;
+                    text-shadow: 0.5rem 0rem var(--accent);
                     font-size: $pageTitle3;
                     letter-spacing: 0.85rem;
+
+                    transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
                 }
 
                 .subheading {

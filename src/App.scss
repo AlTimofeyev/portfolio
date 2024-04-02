@@ -7,17 +7,32 @@
 }
 
 :root {
+    --background: #fffbf0;
+    --foreground: #351d40;
+    --inverse-background: var(--foreground);
+    --inverse-foreground: var(--background);
+    --neutral: #7c7580;
+    --primary: #fde06c;
+    --secondary: #fff0b3;
+    --accent: #4b006e;
+    --accent-support: #d8c2f2;
+    --accent-support2: #9069bf;
+    --success: #77d977;
+    --failure: #cc6666;
+
     font-size: 16px;
     font-size: 62.5%;
 }
 
 .app {
-    background-color: $lightBackground_LightTheme;
+    background-color: var(--background);
     display: flex;
     justify-content: center;
     font-family: 'Inter', sans-serif;
     font-size: $defaultFontSize;
     font-weight: 300;
+
+    transition: background-color 0.25s ease-in-out;
 
     .container {
         width: 100%;

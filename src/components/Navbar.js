@@ -2,6 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavbarPageSelectionContext } from '../contexts/NavbarContext';
 import { ColorSchemeContext } from '../contexts/ColorSchemeContext';
+import { ReactComponent as GitHubIcon } from '../src-assets/social-icons/Social_Icon-GitHub.svg';
+import { ReactComponent as LinkedInIcon } from '../src-assets/social-icons/Social_Icon-LinkedIn.svg';
+import { ReactComponent as LightModeIcon } from '../src-assets/website-mode-icons/Light_Mode-Icon.svg';
+import { ReactComponent as DarkModeIcon } from '../src-assets/website-mode-icons/Dark_Mode-Icon.svg';
 import './Navbar.scss';
 
 
@@ -13,16 +17,23 @@ function Navbar() {
     const handleMenuIconClick = () => setMobileMenu(!mobileMenuOpen);
     const closeMobileMenu = () => setMobileMenu(false);
 
+    // let mobileMenu = mobileMenuOpen ? 'active-navbar' : '';
+    // let colorScheme = lightSchemeSelected ? 'light-mode' : 'dark-mode';
+
     // const handleNavbarLinkClick = (index) => {
     //     setMobileMenu(false);
     //     setPageSelectionState(index);
     // };
 
-    // THis Use Effect is for testing:
-    useEffect(() => {
-        console.log("Selected Color Scheme: true == light , false == dark");
-        console.log(lightSchemeSelected);
-    }, [lightSchemeSelected]);
+    // useEffect(() => {
+    //     console.log("Color Scheme where True == light theme , False == dark Theme");
+    //     console.log("Light Scheme Selected: " , lightSchemeSelected);
+    // }, [lightSchemeSelected]);
+
+    // useEffect(() => {
+    //     mobileMenu = mobileMenuOpen ? 'active-navbar' : '';
+    //     colorScheme = lightSchemeSelected ? 'light-mode' : 'dark-mode';
+    // }, [lightSchemeSelected, mobileMenuOpen]);
 
     return (
         <div className='navbar'>
@@ -30,20 +41,85 @@ function Navbar() {
                 <div className='navbar-logo'>
                     <Link className='navbar-logo-link' onClick={closeMobileMenu} to='/'>
                         <div className='navbar-logo-container'>
-                            <img className='portfolio-logo' src={process.env.PUBLIC_URL + '/portfolioLogo1024-Light.PNG'} alt='Logo' />
+                            <img className={lightSchemeSelected ? 'portfolio-logo logo-invisible' : 'portfolio-logo'} src={process.env.PUBLIC_URL + '/portfolioLogo1024-Light.PNG'} alt='Logo' />
+                            <img className={lightSchemeSelected ? 'portfolio-logo' : 'portfolio-logo logo-invisible'} src={process.env.PUBLIC_URL + '/portfolioLogo1024-Dark.PNG'} alt='Logo' />
+                            {/* <img className='portfolio-logo' src={process.env.PUBLIC_URL + '/portfolioLogo1024-Light.PNG'} alt='Logo' /> */}
                         </div>
                         <div className='navbar-logo-name-container'>
                             <span className='navbar-name'>AL TIMOFEYEV</span>
                         </div>
                     </Link>
                 </div>
-                <div className='menu-icon'>
-                    <div className='menu-icon-container' onClick={handleMenuIconClick}>
-                        <i className={mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'} />
+                <div className='theme-changer'>
+                    <div className='theme-changer-container'>
+                        <button className='theme-btn' title={lightSchemeSelected ? 'Dark Mode' : 'Light Mode'} onClick={() => setLightScheme(!lightSchemeSelected)}>
+                            <div className='theme-icon-background'></div>
+                            <div className='theme-icon-container'>
+                                <LightModeIcon className={lightSchemeSelected ? 'theme-icon light-theme-invisible' : 'theme-icon light-theme'} />
+                                <DarkModeIcon className={lightSchemeSelected ? 'theme-icon dark-theme' : 'theme-icon dark-theme-invisible'} />
+                            </div>
+                        </button>
                     </div>
                 </div>
-                <div className={mobileMenuOpen ? 'navbar-menu active-menu' : 'navbar-menu'}>
+                <div className='navbar-menu'>
                     <div className='navbar-menu-container'>
+                        <div className='navbar-menu-links'>
+                            <Link className={pageSelected[0] ? 'navbar-link active-link' : 'navbar-link'} to='/'>Home</Link>
+                            <Link className={pageSelected[1] ? 'navbar-link active-link' : 'navbar-link'} to='/devlogs'>Devlogs</Link>
+                            <Link className={pageSelected[2] ? 'navbar-link active-link' : 'navbar-link'} to='/projects'>Projects</Link>
+                            <Link className={pageSelected[3] ? 'navbar-link active-link' : 'navbar-link'} to='/contact'>Contact</Link>
+                        </div>
+                        <div className='navbar-menu-buttons'>
+                            <div className='navbar-button'>
+                                <a
+                                    className='btn-link'
+                                    href='https://github.com/AlTimofeyev/'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                >
+                                    <div className='btn-logo-container'>
+                                        <GitHubIcon className='btn-logo' />
+                                    </div>
+                                    <span className='btn-label'>GitHub</span>
+                                </a>
+                            </div>
+                            <div className='navbar-button'>
+                                <a
+                                    className='btn-link'
+                                    href='https://www.linkedin.com/in/al-timofeyev-235542129/'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                >
+                                    <div className='btn-logo-container'>
+                                        <LinkedInIcon className='btn-logo' />
+                                    </div>
+                                    <span className='btn-label'>LinkedIn</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='mobile-menu-icon'>
+                    <div className='menu-icon-container' onClick={handleMenuIconClick}>
+                        <button className='menu-button'>
+                            <div className='menu-btn-background'></div>
+                            <i className={mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'} />
+                        </button>
+                    </div>
+                </div>
+                <div className={mobileMenuOpen ? 'mobile-navbar-menu active-mobile-menu' : 'mobile-navbar-menu'}>
+                    <div className='navbar-menu-container'>
+                        <div className='theme-changer'>
+                            <div className='theme-changer-container'>
+                                <button className='theme-btn' title={lightSchemeSelected ? 'Dark Mode' : 'Light Mode'} onClick={() => setLightScheme(!lightSchemeSelected)}>
+                                    <div className='theme-icon-background'></div>
+                                    <div className='theme-icon-container'>
+                                        <LightModeIcon className={lightSchemeSelected ? 'theme-icon light-theme-invisible' : 'theme-icon light-theme'} />
+                                        <DarkModeIcon className={lightSchemeSelected ? 'theme-icon dark-theme' : 'theme-icon dark-theme-invisible'} />
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
                         <div className='navbar-menu-links'>
                             <Link className={pageSelected[0] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/'>Home</Link>
                             <Link className={pageSelected[1] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/devlogs'>Devlogs</Link>
@@ -51,26 +127,32 @@ function Navbar() {
                             <Link className={pageSelected[3] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/contact'>Contact</Link>
                         </div>
                         <div className='navbar-menu-buttons'>
-                            <span className='navbar-button'>
+                            <div className='navbar-button'>
                                 <a
-                                    className='navbar-github'
+                                    className='btn-link'
                                     href='https://github.com/AlTimofeyev/'
                                     target='_blank'
                                     rel='noopener noreferrer'
                                 >
-                                    GitHub
+                                    <div className='btn-logo-container'>
+                                        <GitHubIcon className='btn-logo' />
+                                    </div>
+                                    <span className='btn-label'>GitHub</span>
                                 </a>
-                            </span>
-                            <span className='navbar-button'>
+                            </div>
+                            <div className='navbar-button'>
                                 <a
-                                    className='navbar-linkedin'
+                                    className='btn-link'
                                     href='https://www.linkedin.com/in/al-timofeyev-235542129/'
                                     target='_blank'
                                     rel='noopener noreferrer'
                                 >
-                                    LinkedIn
+                                    <div className='btn-logo-container'>
+                                        <LinkedInIcon className='btn-logo' />
+                                    </div>
+                                    <span className='btn-label'>LinkedIn</span>
                                 </a>
-                            </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,3 +171,58 @@ export default Navbar
 // Currently, the user using the browser back/forward buttons breaks navbar navigation.
 // A janky solution to this for now could be having each page set the active navbar link
 // in the useLayoutEffect component on page load.
+
+
+
+
+// < div className = 'navbar' >
+//     <div className={mobileMenuOpen ? 'navbar-container active-navbar' : 'navbar-container'}>
+//         <div className='navbar-logo'>
+//             <Link className='navbar-logo-link' onClick={closeMobileMenu} to='/'>
+//                 <div className='navbar-logo-container'>
+//                     <img className='portfolio-logo' src={process.env.PUBLIC_URL + '/portfolioLogo1024-Light.PNG'} alt='Logo' />
+//                 </div>
+//                 <div className='navbar-logo-name-container'>
+//                     <span className='navbar-name'>AL TIMOFEYEV</span>
+//                 </div>
+//             </Link>
+//         </div>
+//         <div className='menu-icon'>
+//             <div className='menu-icon-container' onClick={handleMenuIconClick}>
+//                 <i className={mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'} />
+//             </div>
+//         </div>
+//         <div className={mobileMenuOpen ? 'navbar-menu active-menu' : 'navbar-menu'}>
+//             <div className='navbar-menu-container'>
+//                 <div className='navbar-menu-links'>
+//                     <Link className={pageSelected[0] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/'>Home</Link>
+//                     <Link className={pageSelected[1] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/devlogs'>Devlogs</Link>
+//                     <Link className={pageSelected[2] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/projects'>Projects</Link>
+//                     <Link className={pageSelected[3] ? 'navbar-link active-link' : 'navbar-link'} onClick={closeMobileMenu} to='/contact'>Contact</Link>
+//                 </div>
+//                 <div className='navbar-menu-buttons'>
+//                     <span className='navbar-button'>
+//                         <a
+//                             className='navbar-github'
+//                             href='https://github.com/AlTimofeyev/'
+//                             target='_blank'
+//                             rel='noopener noreferrer'
+//                         >
+//                             GitHub
+//                         </a>
+//                     </span>
+//                     <span className='navbar-button'>
+//                         <a
+//                             className='navbar-linkedin'
+//                             href='https://www.linkedin.com/in/al-timofeyev-235542129/'
+//                             target='_blank'
+//                             rel='noopener noreferrer'
+//                         >
+//                             LinkedIn
+//                         </a>
+//                     </span>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+//     </div >
