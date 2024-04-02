@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.7fefeb14.css",
+    "main.css": "/portfolio/static/css/main.9e22f54f.css",
     "main.js": "/portfolio/static/js/main.230d32b4.js",
     "static/media/Enso_Circle.svg": "/portfolio/static/media/Enso_Circle.1c68511a399d8a011860bfc126ffff37.svg",
     "static/media/Light_Mode-Icon.svg": "/portfolio/static/media/Light_Mode-Icon.5a4ee764095c0f9bdfc4611df4c13cdd.svg",
@@ -22,11 +22,11 @@
     "index.html": "/portfolio/index.html",
     "static/media/Dark_Mode-Icon.svg": "/portfolio/static/media/Dark_Mode-Icon.9fdd84040636e1bc3bdad4d8ff618eca.svg",
     "static/media/Skill_Background.svg": "/portfolio/static/media/Skill_Background.af75fd9126060c90b5b9c7cca588b235.svg",
-    "main.7fefeb14.css.map": "/portfolio/static/css/main.7fefeb14.css.map",
+    "main.9e22f54f.css.map": "/portfolio/static/css/main.9e22f54f.css.map",
     "main.230d32b4.js.map": "/portfolio/static/js/main.230d32b4.js.map"
   },
   "entrypoints": [
-    "static/css/main.7fefeb14.css",
+    "static/css/main.9e22f54f.css",
     "static/js/main.230d32b4.js"
   ]
 }
