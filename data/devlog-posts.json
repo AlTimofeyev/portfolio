@@ -1,8 +1,8 @@
 [
     {
         "year": "2024",
-        "month": "March",
-        "day": "22",
+        "month": "April",
+        "day": "1",
         "project": "Portfolio Website",
         "subject": "Transition to Portfolio v2.0",
         "links": {
@@ -37,6 +37,99 @@
                             "page while the local storage will persist. The local storage ends up breaking the navbar ",
                             "active link as well, when the user revisits the page. The quick-fix solution is a temporary ",
                             "fix for this issue at the moment."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Devlog Posts",
+                "desc": [
+                    {
+                        "paragraphBlock": [
+                            "The current content for all the devlogs on the Devlog page is stored in a JSON file and ",
+                            "mapped onto HTML elements. There is possibly an easier way to do this, maybe storing the ",
+                            "information in a proper database solution, but for now this works just fine."
+                        ]
+                    },
+                    {
+                        "paragraphBlock": [
+                            "There is an issue to consider though: What happens when there are too many devlog posts. ",
+                            "If there are too many posts to show from the devlog JSON file, this might slow down the browser, ",
+                            "or slow down the loading of the devlog posts onto the page. To avoid this issue, I'll need ",
+                            "to look into some sort of loading option where initially only a certain amount of devlog posts ",
+                            "are loaded up (like 10) and as the user scrolls down the page, more devlog posts begin loading. ",
+                            "This approach is similar to how most social media platforms function."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Color Scheme",
+                "desc": [
+                    {
+                        "paragraphBlock": [
+                            "The color scheme (color MODE) is set with the help of React Context. The default color scheme ",
+                            "is <Light Mode> and is defined in the App.scss file. Upon page-load, the color scheme choice ",
+                            "is saved into the browser's Local Storage. If the user decided to change the color scheme, the ",
+                            "Context updates the user's choice via the Context and saved the user's choice to Local Storage. ",
+                            "This way, if the user visits the page again, or if the user reloads the page, the color scheme ",
+                            "they previously chose is loaded from Local Storage."
+                        ]
+                    },
+                    {
+                        "paragraphBlock": [
+                            "I origianlly tried to use SCSS to create variables for the two different color schemes. Unfortunately, ",
+                            "I wasn't able to identify how to modify SCSS variables through the React Context and was made ",
+                            "aware that the SCSS compiler thows away variables that are not used at runtime. I don't know what ",
+                            "it means by 'throws away variables' at the moment, so I decided to go with pure CSS variables ",
+                            "for this occasion to avoid any mishaps. I'll need to do a bit more searching in this area when ",
+                            "I update my portfolio in the future."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Assets",
+                "desc": [
+                    {
+                        "paragraphBlock": [
+                            "Some of the icons were used from FontAwesome. However, the majority of the assets and ",
+                            "icons were hand-drawn by me. Since some of the icons supplied by FontAwesome were not centered ",
+                            "uniformly (from icon to icon), I had to draw most of the icons by hand using Procreate, export ",
+                            "the icons in PNG format and then convert them to SVG format using a website called convertio.co ",
+                            "before import them into my React project. Upon importing the icons into my React project, it is ",
+                            "important to not that a simple change needs to be made to each asset: Open the SVG files, one by one, ",
+                            "and modify their <fill> and <stroke> fields to equal 'current'. This will allow for their fill ",
+                            "and stroke attributes to be set via CSS."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "GSAP Animations",
+                "desc": [
+                    {
+                        "paragraphBlock": [
+                            "All of the animations on the page are created using GreenSock's GSAP library. For React, it ",
+                            "is good to note that GSAP animations should be defined in a funciton called <gsap.context>. ",
+                            "This context allows for clean animation definitions and animation timeline creation using React ",
+                            "Reference Hooks, followed by a cleanup function called <revert> for each GSAP context upon leaving ",
+                            "the area they were defined in. It is also good to note that these GSAP contexts are better to ",
+                            "be defined in React's <useEffect> as it allows you to call the cleanup <revert> funtion in it's ",
+                            "return statement. Another good thing to note is that, if you are using React Reference Hooks inside ",
+                            "GSAP context, then you can reference anything within the parent element of the React Reference Hook ",
+                            "using CSS. Example: '.devlog-post-container' or '.section-title' and etc."
+                        ]
+                    },
+                    {
+                        "paragraphBlock": [
+                            "GSAP also has a way to define animations for specific screen sizes. You can use the GSAP <gsap.matchMedia> ",
+                            "function to define animations for a number of media options. GSAP's <gsap.matchMedia> function ",
+                            "acts the same way that GSAP's <gsap.context> function acts. It is important to note that, since ",
+                            "<gsap.matchMedia> functions the same way as a <gsap.context>, you don't need to use <gsap.context> ",
+                            "inside of <gsap.matchMedia> because it already functions like a GSAP conext. If I'm going to use ",
+                            "more complex animations in the future, I'll need to do more research into the finer details of <gsap.context> ",
+                            "and <gsap.matchMedia>, as well as any other options that GSAP offers for React applications."
                         ]
                     }
                 ]
