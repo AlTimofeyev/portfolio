@@ -104,6 +104,7 @@
                         flex-direction: column;
                         gap: 1rem;
                         width: 100%;
+                        color: black;
 
                         .form-input {
                             flex: 1;
@@ -121,6 +122,7 @@
                                 border-radius: 25px;
                                 font-family: 'Inter', sans-serif;
                                 color: inherit;
+                                background-color: white;
 
                                 transition: border 0.25s ease-in-out, outline 0.25s ease-in-out;
 
